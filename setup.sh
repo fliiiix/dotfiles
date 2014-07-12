@@ -4,6 +4,9 @@
 git config --global user.name "fliiiix"
 git config --global user.email "de-ch@hotmail.de"
 
+##push default config
+git config --global push.default simple
+
 #copy themes 
 if [ ! -d ~/.themes ]
    then
