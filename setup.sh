@@ -42,3 +42,9 @@ sudo sh -c "curl https://gist.githubusercontent.com/fliiiix/a51e46864803809e4d81
 sudo yum install -y nautilus-dropbox
 
 echo "Your dropbox is ready for setup!"
+
+#enabe rpmfusion repos free and nonfree
+
+sudo sh -c "yum localinstall --nogpgcheck -y http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm"
+
+sudo yum install steam
