@@ -1,5 +1,7 @@
 #!/bin/bash
 
+WORK_DIR=$(pwd)
+
 #setup git config
 git config --global user.name "fliiiix"
 git config --global user.email "de-ch@hotmail.de"
@@ -7,10 +9,33 @@ git config --global user.email "de-ch@hotmail.de"
 ##push default config
 git config --global push.default simple
 
+#setup icons
+
+sudo yum install librsvg2-tools
+
+if [ ! -d ~/.icons ]
+   then
+     mkdir ~/.icons
+fi
+
+cd ~/.icons/
+
+if [ ! -d ~/.icons/Clarity ]
+    then
+      git clone https://github.com/jcubic/Clarity.git
+fi
+
+cd ~/.icons/Clarity/
+git pull
+./configure
+make
+
+cd $WORK_DIR
+
 #copy themes 
 if [ ! -d ~/.themes ]
    then
-     mkdir .themes
+     mkdir ~/.themes
 fi
 
 cp -rf ./.themes ~/.themes
@@ -47,4 +72,9 @@ echo "Your dropbox is ready for setup!"
 
 sudo sh -c "yum localinstall --nogpgcheck -y http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm"
 
-sudo yum install steam
+
+#install steam from rpmfusion
+sudo yum install -y steam
+
+#install vlc from rpmfusion
+sudo yum install -y vlc
