@@ -78,3 +78,7 @@ sudo yum install -y steam
 
 #install vlc from rpmfusion
 sudo yum install -y vlc
+
+#install modules for logitech g510
+sudo curl -o /etc/yum.repos.d/gnome15.repo http://packages.russo79.com/fedora/20/gnome15/gnome15.repo
+sudo yum install gnome15-suite-other 
