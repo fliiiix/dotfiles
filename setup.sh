@@ -1,13 +1,7 @@
 #!/bin/bash
 
+#awwwwwwwwwwwwwwww stop using me
 WORK_DIR=$(pwd)
-
-#setup git config
-git config --global user.name "fliiiix"
-git config --global user.email "de-ch@hotmail.de"
-
-##push default config
-git config --global push.default simple
 
 #setup icons
 
@@ -40,13 +34,6 @@ fi
 
 cp -rf ./.themes ~/.themes
 
-#setup screenshots
-sudo yum install -y scrot curl
-
-sudo sh -c "curl https://gist.githubusercontent.com/fliiiix/8010581/raw/e51d63682138df57756eec78c074e1a70603f01a/screenshot > /usr/local/bin/screenshot"
-
-sudo chmod +x /usr/local/bin/screenshot
-
 #setup keepass don't forget to install the chrome or firefox plugin
 sudo yum install -y keepass
 
@@ -59,19 +46,6 @@ sudo git clone -n https://github.com/pfn/keepasshttp.git --depth 1 /usr/lib/keep
 
 cd /usr/lib/keepass/plugins/keepasshttp
 sudo git checkout HEAD KeePassHttp.plgx
-
-
-#setup dropbox
-sudo sh -c "curl https://gist.githubusercontent.com/fliiiix/a51e46864803809e4d81/raw/4f18cd0e2e5d87c99fee27124f8227f64b4de420/dropbox.repo > /etc/yum.repos.d/dropbox.repo"
-
-sudo yum install -y nautilus-dropbox
-
-echo "Your dropbox is ready for setup!"
-
-#enabe rpmfusion repos free and nonfree
-
-sudo sh -c "yum localinstall --nogpgcheck -y http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm"
-
 
 #install steam from rpmfusion
 sudo yum install -y steam

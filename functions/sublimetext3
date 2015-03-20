@@ -1,0 +1,14 @@
+#!/bin/bash
+
+FILENAME="sublime_text_3_build_3065_x64.tar.bz2"
+URL="c758482.r82.cf2.rackcdn.com/${FILENAME}"
+
+echo $URL
+
+curl $URL > $FILENAME
+
+sudo tar xvjf $FILENAME -C /usr/local/src/
+
+sudo ln -s /usr/local/src/sublime_text_3/sublime_text /usr/local/bin/subl
+
+rm -f $FILENAME
