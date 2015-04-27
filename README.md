@@ -3,6 +3,8 @@ dotfiles
 
 my personal dotfiles
 
+![desktop](desktop.png)
+
 I started to put each task in a function file. So please stop using the `setup.sh`. 
 
 
