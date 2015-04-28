@@ -1,0 +1,13 @@
+echo "This does nothing. You should copy the parts by hand";
+exit;
+
+# Aliases
+alias bundll='bundle install --binstubs --path vendor'
+tailn='tail -n 200'
+
+#Functions
+
+sshcreate() {
+    ssh-keygen -b 4096 -f $1 -C hi@l33t.name && echo "your public key:" && cat $1.pub
+} 
+
