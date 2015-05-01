@@ -51,6 +51,6 @@ default_color		222
 color1			7B3F00
 
 TEXT
-${font Poky:size=20}y${voffset -10}${goto 30}${font}Root${goto 70}${voffset -7}${font Poky:size=20}y${voffset -10}${font}${goto 97}Home
+${font Poky:size=20}y${voffset -10}${goto 30}${font}Root${goto 70}${voffset -8}${font Poky:size=20}y${voffset -10}${font}${goto 97}Home
 ${offset 2}${voffset 2}${fs_bar 3,20 /}${goto 30}${voffset -2}${font Dejavu Sans:size=9:condensed:bold}$color1${fs_used_perc /} %$color${goto 70}${offset 2}${voffset 2}${fs_bar 3,20 /home}${goto 97}${voffset -2}$color1${fs_used_perc /home} %$color
 ${offset 2}${voffset 1}${font Dejavu Sans:size=7}I/O » $color1${diskio}$color${alignr 5}${diskiograph 8,30}
