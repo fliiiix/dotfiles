@@ -1,0 +1,6 @@
+#!/bin/sh
+
+sudo yum install conky
+
+echo "Copy config dir to ~/.conkyrc"
+cp -r ./conkyrc ~/.conkyrc
