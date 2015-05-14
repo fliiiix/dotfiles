@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "make sure you run rmpfuse first"
+sudo yum install vlc
+sudo yum install mozilla-vlc
