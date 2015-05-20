@@ -18,5 +18,9 @@ compinit -i
 # custom bundle install
 alias bundll="bundle install --binstubs --path vendor"
 
+sshcreate() {
+    ssh-keygen -b 4096 -f $1 -C hi@l33t.name && echo "your public key:" && cat $1.pub
+}
+
 # Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/.rvm/bin"
