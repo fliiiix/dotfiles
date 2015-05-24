@@ -1,3 +1,7 @@
+# personal things
+
+export MAIL="hi@l33t.name"
+
 # Set LANG to en_US.UTF-8
 export LANG=en_US.UTF-8
 
@@ -19,7 +23,11 @@ compinit -i
 alias bundll="bundle install --binstubs --path vendor"
 
 sshcreate() {
-    ssh-keygen -b 4096 -f $1 -C hi@l33t.name && echo "your public key:" && cat $1.pub
+    ssh-keygen -b 4096 -f $1 -C $MAIL && echo "your public key:" && cat $1.pub
+}
+
+lsnummeric(){
+  ls -l | awk '{k=0;for(i=0;i<=8;i++)k+=((substr($1,i+2,1)~/[rwx]/) *2^(8-i));if(k)printf("%0o ",k);print}'
 }
 
 # Add RVM to PATH for scripting
