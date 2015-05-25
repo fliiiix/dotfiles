@@ -1,6 +1,7 @@
 #!/bin/bash
 
 #awwwwwwwwwwwwwwww stop using me
+echo "aaaaaaaaaaaa please don't"
 WORK_DIR=$(pwd)
 
 #setup icons
