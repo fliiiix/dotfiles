@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo yum install -y scrot
+sudo dnf install -y scrot
 
 mkdir -p ~/Pictures/screenshots
 
