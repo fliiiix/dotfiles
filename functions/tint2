@@ -1,4 +1,4 @@
 #!/bin/sh
 
-sudo yum install -y tint2 
+sudo dnf install -y tint2 
 cp tint2rc ~/.tint2rc

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo yum install -y git
+sudo dnf install -y git
 
 #setup git config
 git config --global user.name "fliiiix"
