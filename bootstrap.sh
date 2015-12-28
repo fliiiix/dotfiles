@@ -16,3 +16,5 @@ sudo systemctl enable sshd
 sudo service sshd start
 
 sudo sh -c 'echo "127.0.0.1" > /etc/ansible/hosts'
+
+ansible-playbook setup.yaml --ask-become-pass
