@@ -16,9 +16,9 @@
 
 # install icon set
 - hosts: local
-  become: yes
   tasks:
   - name: ensure librsvg2-tools is installed at the latest version
+    become: yes
     dnf: name=librsvg2-tools state=latest
   - name: ensure that icons exist
     file: path=/home/l33tname/.icons/Clarity state=directory
@@ -27,4 +27,4 @@
   - name: config icons
     command: ./configure chdir=/home/l33tname/.icons/Clarity
   - name: build icons
-    command: make chdir=/home/l33tname/.icons/Clarity
+    command: make luteus chdir=/home/l33tname/.icons/Clarity
