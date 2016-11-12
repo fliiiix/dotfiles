@@ -1,13 +1,30 @@
 ---
+# install vim
 - hosts: local
   become: yes
   tasks:
   - name: ensure vim is installed at the latest version
     dnf: name=vim state=latest
 
+# config git
 - hosts: local
   tasks:
   - name: configure the git username
     git_config: name=user.name value="fliiiix" scope=global
   - name: configure the git email
     git_config: name=user.email value="de-ch@hotmail.de" scope=global
+
+# install icon set
+- hosts: local
+  become: yes
+  tasks:
+  - name: ensure librsvg2-tools is installed at the latest version
+    dnf: name=librsvg2-tools state=latest
+  - name: ensure that icons exist
+    file: path=/home/l33tname/.icons/Clarity state=directory
+  - name: clone icons
+    git: repo=https://github.com/jcubic/Clarity.git dest=/home/l33tname/.icons/Clarity
+  - name: config icons
+    command: ./configure chdir=/home/l33tname/.icons/Clarity
+  - name: build icons
+    command: make chdir=/home/l33tname/.icons/Clarity
