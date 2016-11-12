@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # setup and start ssh
-sudo dnf install -y ansible
+sudo dnf install -y ansible python2-dnf
 ssh-keygen -b 4096 -f $HOME/.ssh/ansible -N ''
 cat $HOME/.ssh/ansible.pub >> $HOME/.ssh/authorized_keys
 
