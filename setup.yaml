@@ -4,3 +4,10 @@
   tasks:
   - name: ensure vim is installed at the latest version
     dnf: name=vim state=latest
+
+- hosts: local
+  tasks:
+  - name: configure the git username
+    git_config: name=user.name value="fliiiix" scope=global
+  - name: configure the git email
+    git_config: name=user.email value="de-ch@hotmail.de" scope=global
