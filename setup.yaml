@@ -25,7 +25,7 @@
   - name: ensure that icons exist
     file: path=/home/l33tname/.icons/Clarity state=directory
   - name: clone icons
-    git: repo=https://github.com/jcubic/Clarity.git dest=/home/l33tname/.icons/Clarity
+    git: repo=https://github.com/jcubic/Clarity.git force=yes depth=1 dest=/home/l33tname/.icons/Clarity
   - name: config icons
     command: ./configure chdir=/home/l33tname/.icons/Clarity
   - name: build icons
