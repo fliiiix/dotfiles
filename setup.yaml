@@ -22,11 +22,31 @@
   - name: ensure librsvg2-tools is installed at the latest version
     become: yes
     dnf: name=librsvg2-tools state=latest
-  - name: ensure that icons exist
-    file: path=/home/l33tname/.icons/Clarity state=directory
+    # https://github.com/ansible/ansible-modules-core/issues/5592
+  - name: ensure that the .icons/Clarity dir don't exist
+    file: path=/home/l33tname/.icons/Clarity state=absent
   - name: clone icons
-    git: repo=https://github.com/jcubic/Clarity.git force=yes depth=1 dest=/home/l33tname/.icons/Clarity
+    git: repo=https://github.com/jcubic/Clarity.git force=yes dest=/home/l33tname/.icons/Clarity
   - name: config icons
     command: ./configure chdir=/home/l33tname/.icons/Clarity
   - name: build icons
     command: make luteus chdir=/home/l33tname/.icons/Clarity
+
+# setup sreenshot script
+- hosts: local
+  tasks:
+  - name: ensure scrot is installed at the latest version
+    become: yes
+    dnf: name=scrot state=latest
+    # used for file permisions not sure why ^^ 
+  - name: ensure libselinux-python is installed at the latest version
+    become: yes
+    dnf: name=libselinux-python state=latest
+  - name: ensure that the screenshot dir exist
+    file: path=/home/l33tname/Pictures/screenshots state=directory
+  - name: copy the screenshot script
+    become: yes
+    template: src=config/scripts/screenshot.tpl dest=/usr/local/bin/screenshot
+  - name: ensure file that the script has the right permisions
+    become: yes
+    file: path=/usr/local/bin/screenshot owner=root group=root mode=0755
