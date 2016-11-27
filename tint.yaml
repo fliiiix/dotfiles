@@ -1,7 +1,0 @@
-- hosts: local
-  tasks:
-  - name: ensure tint2 is installed at the latest version
-    become: yes
-    dnf: name=tint2 state=latest
-  - name: copy the config file
-    template: src=config/configuration/tint2rc.tpl dest=/home/l33tname/.tint2rc

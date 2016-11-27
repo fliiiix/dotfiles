@@ -1,9 +1,0 @@
-- hosts: local
-  tasks:
-  - name: ensure conky is installed at the latest version
-    become: yes
-    dnf: name=conky state=latest
-  - name: copy conky configs
-    command: cp -r /home/l33tname/dotfiles/config/conkyrc /home/l33tname/.conkyrc 
-  - name: copy fonts used for conky
-    command: cp -r /home/l33tname/dotfiles/config/conkyrc/fonts /home/l33tname/.fonts

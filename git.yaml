@@ -1,9 +1,0 @@
-# config git
-- hosts: local
-  tasks:
-  - name: configure the git username
-    git_config: name=user.name value="fliiiix" scope=global
-  - name: configure the git email
-    git_config: name=user.email value="de-ch@hotmail.de" scope=global
-  - name: set the default push behavior to simple
-    git_config: name=push.default value=simple scope=global
