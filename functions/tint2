@@ -1,4 +1,0 @@
-#!/bin/sh
-
-sudo dnf install -y tint2 
-cp tint2rc ~/.tint2rc
