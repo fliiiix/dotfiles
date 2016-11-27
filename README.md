@@ -5,7 +5,7 @@ my personal dotfiles
 
 ```
 sudo dnf install git
-git clone https:/github.com/fliiiix/dotfiles.git
+git clone https://github.com/fliiiix/dotfiles.git
 cd dotfiles && ./bootstrap.sh
 ```
 
