@@ -50,3 +50,25 @@
   - name: ensure file that the script has the right permisions
     become: yes
     file: path=/usr/local/bin/screenshot owner=root group=root mode=0755
+
+# install mtpaint
+- hosts: local
+  tasks:
+    - name: ensure mtpaint is installed at the latest version
+      become: yes
+      dnf: name=mtpaint state=latest
+
+# install sublimetext 
+- hosts: local
+  tasks:
+    - name: download sublime_text and check checksum
+      get_url: 
+        url: https://download.sublimetext.com/sublime_text_3_build_3126_x64.tar.bz2
+        dest: /tmp/sublime_text.tar.bz2
+        checksum: md5:acc34252b0ea7dff1f581c5db1564dcb
+    - name: ensure that the extration dir exist
+      become: yes
+      file: path=/usr/local/sublime_text_3 state=directory
+    - name: unpack sublime_text
+      become: yes
+      unarchive: src=/tmp/sublime_text.tar.bz2 dest=/usr/local/src/sublime_text_3
