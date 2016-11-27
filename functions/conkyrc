@@ -1,6 +1,0 @@
-#!/bin/sh
-
-sudo dnf install conky
-
-echo "Copy config dir to ~/.conkyrc"
-cp -r ./conkyrc ~/.conkyrc
