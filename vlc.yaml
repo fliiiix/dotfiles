@@ -1,0 +1,16 @@
+- hosts: local
+  vars:
+    fedora_version: 25
+  tasks:
+  - name: enable rpmfusion free repo
+    become: yes
+    dnf: name=https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_version }}.noarch.rpm state=present
+  - name: enable rpmfusion nonfree repo
+    become: yes
+    dnf: name=https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_version }}.noarch.rpm state=present
+  - name: ensure that the vlc package is installed
+    become: yes
+    dnf: name=vlc state=present
+  - name: ensure that the vlc mozilla package is installed
+    become: yes
+    dnf: name=mozilla-vlc state=present

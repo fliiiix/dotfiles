@@ -1,5 +1,0 @@
-#!/bin/sh
-
-echo "make sure you run rmpfuse first"
-sudo dnf install vlc
-sudo dnf install mozilla-vlc
