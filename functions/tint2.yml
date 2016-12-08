@@ -5,4 +5,4 @@
     become: yes
     dnf: name=tint2 state=latest
   - name: copy the config file
-    template: src=config/configuration/tint2rc.tpl dest=/home/l33tname/.tint2rc
+    template: src=../config/configuration/tint2rc.tpl dest=/home/l33tname/.tint2rc
