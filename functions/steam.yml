@@ -1,0 +1,6 @@
+---
+- hosts: local
+  tasks:
+  - name: ensure that the steam package is installed
+    become: yes
+    dnf: name=steam state=present

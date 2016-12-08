@@ -1,12 +1,24 @@
 # setup for my laptop
+
+# setup mimimal tools to use linux
 - include: functions/dnf_update.yml
 - include: functions/vim.yml
 - include: functions/git.yml
+
+# install icons and themes
 - include: functions/icons.yml
+- include: functions/tint2.yml
+- include: functions/conky.yml
+
+# install custom scripts
 - include: functions/screenshot.yml
 - include: functions/rawtojpg.yml
-- include: functions/conky.yml
+
+# install core packages
 - include: functions/subl.yml 
 - include: functions/mtpaint.yml
-- include: functions/tint2.yml
+
+# install additional packages
+- include: functions/enable_rpmfusion.yml
 - include: functions/vlc.yml
+- include: functions/steam.yml
