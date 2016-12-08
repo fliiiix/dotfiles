@@ -20,4 +20,4 @@ sudo sh -c 'echo "[local]" > /etc/ansible/hosts'
 sudo sh -c 'echo "127.0.0.1" >> /etc/ansible/hosts'
 
 
-ansible-playbook setup.yaml --ask-become-pass
+ansible-playbook laptop.yaml --ask-become-pass

@@ -1,4 +1,6 @@
 ---
-- name: ensure vim is installed at the latest version
-  become: yes
-  dnf: name=vim state=latest
+- hosts: local
+  tasks:
+  - name: ensure vim is installed at the latest version
+    become: yes
+    dnf: name=vim state=latest

@@ -1,3 +1,6 @@
 ---
-- name: update all packages
-  dnf: name=* state=latest
+- hosts: local
+  tasks:
+  - name: update all packages
+    become: yes
+    dnf: name=* state=latest
