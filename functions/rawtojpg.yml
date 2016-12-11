@@ -9,7 +9,7 @@
     dnf: name=libjpeg-turbo-utils state=present
   - name: copy the rawtojpg script
     become: yes
-    template: src=config/scripts/rawtojpg.tpl dest=/usr/local/bin/rawtojpg
+    template: src=../config/scripts/rawtojpg.tpl dest=/usr/local/bin/rawtojpg
   - name: ensure file that the script has the right permisions
     become: yes
     file: path=/usr/local/bin/rawtojpg owner=root group=root mode=0755

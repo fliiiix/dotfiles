@@ -13,7 +13,7 @@
     file: path=/home/l33tname/Pictures/screenshots state=directory
   - name: copy the screenshot script
     become: yes
-    template: src=config/scripts/screenshot.tpl dest=/usr/local/bin/screenshot
+    template: src=../config/scripts/screenshot.tpl dest=/usr/local/bin/screenshot
   - name: ensure file that the script has the right permisions
     become: yes
     file: path=/usr/local/bin/screenshot owner=root group=root mode=0755
