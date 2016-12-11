@@ -1,0 +1,17 @@
+---
+- hosts: local
+  tasks:
+  - name: ensure that the gmrun package is installed
+    become: yes
+    dnf: name=gmrun state=present
+  - name: ensure that the feh package is installed
+    become: yes
+    dnf: name=feh state=present
+  - name: copy the wallpaper to .wallpaper
+    template: src=../config/tumblr_ng169x6CQv1qkdza9o1_1280.jpg dest=/home/l33tname/.wallpaper/tumblr_ng169x6CQv1qkdza9o1_1280.jpg
+  - name: copy the openbox config file
+    template: src=../config/rc.xml dest=/home/l33tname/.config/openbox/rc.conf
+  - name: copy the openbox config file
+    template: src=../config/rc.xml dest=/home/l33tname/.config/openbox/rc.conf
+  - name: copy the openbox config file
+    template: src=../config/autostart dest=/home/l33tname/.config/openbox/autostart
