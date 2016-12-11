@@ -7,6 +7,7 @@
 
 # install icons and themes
 - include: functions/icons.yml
+- include: functions/openbox_theme.yml
 - include: functions/tint2.yml
 - include: functions/conky.yml
 
