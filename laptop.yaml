@@ -10,6 +10,7 @@
 - include: functions/openbox_theme.yml
 - include: functions/tint2.yml
 - include: functions/conky.yml
+- include: functions/openbox_config.yml
 
 # install custom scripts
 - include: functions/screenshot.yml
