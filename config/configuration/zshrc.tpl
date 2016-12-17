@@ -13,15 +13,8 @@ for config_file ($ZSH/lib/*.zsh) source $config_file
 autoload -U compinit
 compinit -i
 
-# added by travis gem
-[ -f /home/l33tname/.travis/travis.sh ] && source /home/l33tname/.travis/travis.sh
-
 # custom bundle install
 alias bundll="bundle install --binstubs --path vendor"
-
-lsnummeric(){
-  ls -l | awk '{k=0;for(i=0;i<=8;i++)k+=((substr($1,i+2,1)~/[rwx]/) *2^(8-i));if(k)printf("%0o ",k);print}'
-}
 
 # Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/.rvm/bin"

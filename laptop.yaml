@@ -19,6 +19,7 @@
 # install core packages
 - include: functions/subl.yml 
 - include: functions/mtpaint.yml
+- include: functions/zsh.yml
 
 # install additional packages
 - include: functions/enable_rpmfusion.yml
