@@ -13,8 +13,8 @@ cd dotfiles && ./bootstrap.sh
 
 ## Common Problems
 
-Q: Something went wrong what now?
-A: just run `ansible-playbook -K laptop.yaml`
+**Q**: Something went wrong what now?  
+**A**: just run `ansible-playbook -K laptop.yaml`
 
 ## Development
 
