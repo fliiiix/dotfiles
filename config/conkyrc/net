@@ -9,7 +9,7 @@ text_buffer_size	1024
 
 # — WINDOW — #
 own_window yes
-own_window_type normal
+own_window_type desktop
 own_window_transparent	yes
 own_window_hints	undecorate,sticky,skip_taskbar,skip_pager,below
 
