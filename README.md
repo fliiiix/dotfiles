@@ -16,6 +16,9 @@ cd dotfiles && ./bootstrap.sh
 **Q**: Something went wrong what now?  
 **A**: just run `ansible-playbook -K laptop.yaml`
 
+**Q**: The conky configuration looks broken?
+**A**: Yeah, it only works for my screen size & resolution. 
+
 ## Development
 
 Feel free to fork it, test it and submit patches! Or just use it as base 
