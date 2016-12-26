@@ -14,6 +14,13 @@
   - name: build slimlock
     command: make chdir=/usr/local/src/slimlock
   # copy the configs and stuff
+  # mv ../config/slim /usr/share
   - name: install slimlock 
     become: yes
     command: make install chdir=/usr/local/src/slimlock
+  - name: copy the slimlock wrapper script with conky
+    become: yes
+    template: src=../config/scripts/slimlocky.tpl dest=/usr/local/bin/slimlocky
+  - name: ensure file that the script has the right permisions
+    become: yes
+    file: path=/usr/local/bin/slimlocky owner=root group=root mode=0755

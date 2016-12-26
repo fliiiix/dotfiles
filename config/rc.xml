@@ -222,7 +222,7 @@
     <!--lockscreen-->
     <keybind key="W-l">
       <action name="Execute">
-        <command>slimlock</command>
+        <command>slimlocky</command>
       </action>
     </keybind>
     <chainQuitKey>C-g</chainQuitKey>

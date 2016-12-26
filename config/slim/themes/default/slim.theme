@@ -1,0 +1,42 @@
+# slim-hud theme for SLiM by BigRza
+
+# Messages aka username: l33tname
+msg_color               #FFFFFF
+msg_font                Ubuntu:size=14:bold:dpi=96
+msg_x                   1314
+msg_y                   25%
+msg_shadow_color        #000000
+msg_shadow_xoffset      1
+msg_shadow_yoffset      1
+
+# valid values: stretch, tile
+background_style        stretch
+background_color        #eedddd
+
+# Input controls
+input_panel_x           80%
+input_panel_y           20%
+input_name_x            390
+input_name_y            182
+input_password_x        390
+input_password_y        182
+input_font              Ubuntu:size=12:dpi=96
+input_fgcolor           #000000
+
+# Username / password request
+username_font           Ubuntu:size=14:bold:dpi=96
+username_color          #ffffff
+username_x              200
+username_y              200
+password_x              272
+password_y              182
+username_shadow_color   #000000
+username_shadow_xoffset 1
+username_shadow_yoffset 1
+
+username_msg            Username:
+password_msg            Password:
+
+# error messages location
+passwd_feedback_x       1345
+passwd_feedback_y       5%
