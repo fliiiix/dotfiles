@@ -1,0 +1,19 @@
+---
+- hosts: local
+  tasks:
+      # https://github.com/ansible/ansible-modules-core/issues/5592
+  - name: ensure that the slimlock dir don't exist
+    file: path=/usr/local/src/slimlock state=absent
+  - name: clone slimlock
+    become: yes
+    git: repo=https://github.com/dannyn/slimlock force=yes dest=/usr/local/src/slimlock
+  - name: ensure that the folder has the right permisions
+    become: yes
+    file: path=/usr/local/src/slimlock owner=l33tname group=l33tname mode=0755
+  # install missing pkgs
+  - name: build slimlock
+    command: make chdir=/usr/local/src/slimlock
+  # copy the configs and stuff
+  - name: install slimlock 
+    become: yes
+    command: make install chdir=/usr/local/src/slimlock
