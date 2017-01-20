@@ -26,3 +26,6 @@
 - include: functions/enable_rpmfusion.yml
 - include: functions/vlc.yml
 - include: functions/steam.yml
+
+# lenovo yoga 13 specific functions
+- include: funktions/lenovo_yoga_13_setkeycodes.yml
