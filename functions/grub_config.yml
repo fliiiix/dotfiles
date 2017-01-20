@@ -1,0 +1,9 @@
+---
+- hosts: local
+  tasks:
+  - name: remove rhgb quiet 
+    become: yes
+    replace: dest=/etc/default/grub regexp='rhgb quiet' replace='' backup=yes
+  - name: 
+    become: yes
+    command: grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg

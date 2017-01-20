@@ -13,6 +13,9 @@
 - include: functions/openbox_config.yml
 - include: functions/slimlock.yml
 
+# configure core software
+- include: functions/grub_config.yml
+
 # install custom scripts
 - include: functions/screenshot.yml
 - include: functions/rawtojpg.yml
