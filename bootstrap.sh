@@ -3,7 +3,7 @@
 # setup and start ssh
 sudo dnf install -y ansible python2-dnf
 ssh-keygen -b 4096 -f $HOME/.ssh/ansible -N ''
-ssh-keyscan -t ecdsa 127.0.0.1 >> $HOME/.ssh/known_hosts
+ssh-keyscan -t ecdsa-sha2-nistp256 127.0.0.1 >> $HOME/.ssh/known_hosts
 
 cat $HOME/.ssh/ansible.pub >> $HOME/.ssh/authorized_keys
 
