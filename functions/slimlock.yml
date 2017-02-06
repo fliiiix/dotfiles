@@ -1,7 +1,12 @@
 ---
 - hosts: local
   tasks:
-      # https://github.com/ansible/ansible-modules-core/issues/5592
+  - name: ensure libselinux-python is installed at the latest version
+    become: yes
+    dnf: state=latest name={{ item }}
+    with_items:
+      - libselinux-python # used for file permisions not sure why ^^ 
+  # https://github.com/ansible/ansible-modules-core/issues/5592
   - name: ensure that the slimlock dir don't exist
     file: path=/usr/local/src/slimlock state=absent
   - name: clone slimlock

@@ -4,11 +4,10 @@
   tasks:
   - name: ensure scrot is installed at the latest version
     become: yes
-    dnf: name=scrot state=latest
-    # used for file permisions not sure why ^^ 
-  #- name: ensure libselinux-python is installed at the latest version
-  #  become: yes
-  #  dnf: name=libselinux-python state=latest
+    dnf: state=latest name={{ item }}
+    with_items:
+      - scrot
+      - libselinux-python # used for file permisions not sure why ^^ 
   - name: ensure that the screenshot dir exist
     file: path=/home/l33tname/Pictures/screenshots state=directory
   - name: copy the screenshot script

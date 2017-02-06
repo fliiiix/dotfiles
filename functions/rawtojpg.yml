@@ -7,6 +7,7 @@
     with_items:
       - dcraw
       - libjpeg-turbo-utils
+      - libselinux-python # used for file permisions not sure why ^^
   - name: copy the rawtojpg script
     template: src=../config/scripts/rawtojpg.tpl dest=/usr/local/bin/rawtojpg
   - name: ensure file that the script has the right permisions
