@@ -5,10 +5,10 @@
     become: yes
     dnf: name=zsh state=latest
   - name: copy zsh config dir
-    command: cp -r /home/l33tname/dotfiles/config/zsh /home/l33tname/.zsh 
+    copy: src=../config/zsh/ dest=/home/l33tname/.zsh/ 
   - name: copy main config
     template: src=../config/configuration/zshrc.tpl dest=/home/l33tname/.zshrc
   - name: change default shell to zsh
     become: yes
     user: name=l33tname shell=/bin/zsh
-  # you need to also set $SHELL or login in again
+    # You need to set $SHELL or logout and login again!
