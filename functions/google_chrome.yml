@@ -1,0 +1,13 @@
+---
+- hosts: local
+  tasks:
+  - name: download the google chrome rpm and install it (this should also setup the dnf repo)
+    become: yes
+    dnf: name=https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm state=present
+  - name: check if /etc/yum.repos.d/google-chrome.repo exists
+    stat:
+      path: /etc/yum.repos.d/google-chrome.repo 
+    register: repo
+  - fail:
+      msg: "There is no /etc/yum.repos.d/google-chrome.repo setup for updates!"
+    when: not repo.stat.exists 
