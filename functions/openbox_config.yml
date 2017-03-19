@@ -8,6 +8,7 @@
       - gmrun
       - feh
       - xbacklight
+      - pinentry-gui
   - name: create the .wallpaper dir
     file: path=/home/l33tname/.wallpaper state=directory
   - name: copy the wallpaper to .wallpaper
