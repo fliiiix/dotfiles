@@ -1,0 +1,6 @@
+---
+- hosts: local
+  tasks:
+  - name: ensure firefox is installed at the latest version
+    become: yes
+    dnf: name=firefox state=latest
