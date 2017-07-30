@@ -11,5 +11,5 @@ PROFIL_DIR=`grep -o '.\{8\}\.default' /home/${USER}/.thunderbird/profiles.ini`
 echo "found: ${PROFIL_DIR}"
 
 echo "creating tar.gz"
-#tar -zcvf /tmp/$(date +"%Y_%m_%d_thunderbird")_${PROFIL_DIR}.tar.gz /home/${USER}/.thunderbird/${PROFIL_DIR}
+tar -zcvf /tmp/$(date +"%Y_%m_%d_thunderbird")_${PROFIL_DIR}.tar.gz /home/${USER}/.thunderbird/${PROFIL_DIR}
 echo "created: /tmp/$(date +"%Y_%m_%d_thunderbird")_${PROFIL_DIR}.tar.gz"

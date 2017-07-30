@@ -11,6 +11,6 @@ PROFIL_DIR=`grep -o '.\{8\}\.default' /home/${USER}/.mozilla/firefox/profiles.in
 echo "found: ${PROFIL_DIR}"
 
 echo "creating tar.gz"
-date +"%Y_%m_%d_thunderbird"
+date +"%Y_%m_%d_firefox"
 tar -zcvf /tmp/$(date +"%Y_%m_%d_firefox")_${PROFIL_DIR}.tar.gz /home/${USER}/.mozilla/firefox/${PROFIL_DIR}
-echo "created: /tmp/${PROFIL_DIR}.tar.gz"
+echo "created: /tmp/$(date +"%Y_%m_%d_firefox")_${PROFIL_DIR}.tar.gz"
