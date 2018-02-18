@@ -6,6 +6,10 @@
     dnf: name=zsh state=latest
   - name: copy zsh config dir
     copy: src=../config/zsh/ dest=/home/l33tname/.zsh/ 
+  - name: download zsh-autosuggestions
+    get_url:
+      url: https://raw.githubusercontent.com/zsh-users/zsh-autosuggestions/master/zsh-autosuggestions.zsh
+      dest: /home/l33tname/.zsh/
   - name: copy main config
     template: src=../config/configuration/zshrc.tpl dest=/home/l33tname/.zshrc
   - name: change default shell to zsh
