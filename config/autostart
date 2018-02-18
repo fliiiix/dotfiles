@@ -8,6 +8,9 @@ tint2 -c /home/${USER}/.tint2rc &
 #gnome dinge
 gnome-keyring-daemon --start --components=pkcs11
 
+# Support switching keyboard layouts using both shifts at same time
+setxkbmap -layout us,ch -option grp:shifts_toggle &
+
 # The directory of conkyrcs
 conky_dir="/home/${USER}/.conkyrc"
 # The command for start conkys
