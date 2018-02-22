@@ -1,34 +1,25 @@
 # setup for my laptop
 
 # setup mimimal tools to use linux
-- include: functions/dnf_update.yml
-- include: functions/vim.yml
-- include: functions/git.yml
+- import_playbook: functions/dnf_update.yml
+- import_playbook: functions/vim.yml
+- import_playbook: functions/git.yml
 
 # install icons and themes
-- include: functions/icons.yml
-- include: functions/openbox_theme.yml
-- include: functions/tint2.yml
-- include: functions/conky.yml
-- include: functions/openbox_config.yml
-- include: functions/slimlock.yml
+
 
 # configure core software
-- include: functions/grub_config.yml
+- import_playbook: functions/grub_config.yml
 
 # install custom scripts
-- include: functions/screenshot.yml
-- include: functions/rawtojpg.yml
+- import_playbook: functions/screenshot.yml
+- import_playbook: functions/rawtojpg.yml
 
 # install core packages
-- include: functions/subl.yml 
-- include: functions/mtpaint.yml
-- include: functions/zsh.yml
+- import_playbook: functions/subl.yml 
+- import_playbook: functions/mtpaint.yml
+- import_playbook: functions/zsh.yml
 
 # install additional packages
-- include: functions/enable_rpmfusion.yml
-- include: functions/vlc.yml
-- include: functions/steam.yml
-
-# lenovo yoga 13 specific functions
-- include: funktions/lenovo_yoga_13_setkeycodes.yml
+- import_playbook: functions/enable_rpmfusion.yml
+- import_playbook: functions/vlc.yml
