@@ -1,5 +1,5 @@
 ---
-- hosts: local
+- hosts: all
   tasks:
     # install icon set
   - name: ensure librsvg2-tools is installed at the latest version

@@ -1,5 +1,5 @@
 ---
-- hosts: local
+- hosts: all
   tasks:
   - name: create the service file
     become: yes

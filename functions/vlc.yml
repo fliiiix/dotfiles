@@ -1,5 +1,5 @@
 ---
-- hosts: local
+- hosts: all
   tasks:
   - name: ensure that the vlc|mozilla-vlc package is installed
     become: yes

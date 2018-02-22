@@ -1,5 +1,5 @@
 ---
-- hosts: local
+- hosts: all
   become: yes
   tasks:
   - name: ensure that the dcraw|libjpeg-turbo-utils package is installed

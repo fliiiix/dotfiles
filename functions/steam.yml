@@ -1,5 +1,5 @@
 ---
-- hosts: local
+- hosts: all
   tasks:
   - name: ensure that the steam package is installed
     become: yes

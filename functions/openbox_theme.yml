@@ -1,5 +1,5 @@
 ---
-- hosts: local
+- hosts: all
   tasks:
     # https://github.com/ansible/ansible-modules-core/issues/5592
   - name: ensure that the .themes dir don't exist

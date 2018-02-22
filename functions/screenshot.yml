@@ -1,6 +1,6 @@
 # setup screenshot script
 ---
-- hosts: local
+- hosts: all
   tasks:
   - name: ensure scrot is installed at the latest version
     become: yes

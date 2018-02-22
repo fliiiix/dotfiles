@@ -1,5 +1,5 @@
 ---
-- hosts: local
+- hosts: all
   tasks:
   - name: download sublime_text and check checksum
     get_url: 

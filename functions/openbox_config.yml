@@ -1,5 +1,5 @@
 ---
-- hosts: local
+- hosts: all
   tasks:
   - name: ensure that the gmrun|feh|xbacklight package is installed
     become: yes
