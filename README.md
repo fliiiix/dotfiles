@@ -6,7 +6,7 @@ My personal dotfiles, always in work never finished.
 ```
 sudo dnf install git
 git clone https://github.com/fliiiix/dotfiles.git
-cd dotfiles && ./bootstrap.sh
+cd dotfiles && ./bootstrap.sh laptop|desktop
 ```
 
 ![desktop](desktop.png)
