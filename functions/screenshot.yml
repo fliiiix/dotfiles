@@ -9,7 +9,7 @@
       - scrot
       - libselinux-python # used for file permisions not sure why ^^ 
   - name: ensure that the screenshot dir exist
-    file: path=/home/l33tname/Pictures/screenshots state=directory
+    file: path=/home/{{ ansible_env.USER }}/Pictures/screenshots state=directory
   - name: copy the screenshot script
     become: yes
     template: src=../config/scripts/screenshot.tpl dest=/usr/local/bin/screenshot

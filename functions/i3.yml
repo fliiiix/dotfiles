@@ -8,4 +8,4 @@
     become: yes
     dnf: name=i3lock state=latest
   - name: copy main config
-    template: src=../config/configuration/i3.tpl dest=/home/l33tname/.config/i3/config
+    template: src=../config/configuration/i3.tpl dest=/home/{{ ansible_env.USER }}/.config/i3/config

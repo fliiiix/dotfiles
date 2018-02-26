@@ -1,8 +1,0 @@
----
-- hosts: all
-  tasks:
-    # https://github.com/ansible/ansible-modules-core/issues/5592
-  - name: ensure that the .themes dir don't exist
-    file: path=/home/l33tname/.themes state=absent
-  - name: clone the boje theme
-    git: repo=https://bitbucket.org/l33tname/boje.git force=yes dest=/home/l33tname/.themes/
