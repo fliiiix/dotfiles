@@ -4,3 +4,5 @@
   - name: ensure firefox is installed at the latest version
     become: yes
     dnf: name=firefox state=latest
+    # copy this file to show the bookmarks bar in fullscreen
+    # config/configuration/userChrome.css ~/.mozilla/firefox/xv8bkit6.default/chrome/userChrome.css
