@@ -153,13 +153,16 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # lockscreen
-bindsym $mod+l exec "i3lock -i /home/l33tname/.config/i3/bg2.png"
+bindsym $mod+l exec "i3lock -i /home/l33tname/.config/i3/bg.png"
 
 # background 
-exec_always --no-startup-id "feh --bg-scale /home/l33tname/.config/i3/bg2.png"
+exec_always --no-startup-id "feh --borderless --bg-scale /home/l33tname/.config/i3/bg.png"
 
 # keymap
 exec_always --no-startup-id "setxkbmap -layout us,ch -option grp:shifts_toggle"
+
+# redshift
+exec_always --no-startup-id "redshift"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)

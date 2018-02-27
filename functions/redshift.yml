@@ -1,0 +1,6 @@
+---
+- hosts: all
+  tasks:
+  - name: ensure redshift is installed at the latest version
+    become: yes
+    dnf: name=redshift state=latest
