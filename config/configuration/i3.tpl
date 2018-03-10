@@ -152,6 +152,10 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# screen brightness you need to install light
+bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
+
 # lockscreen
 bindsym $mod+l exec "i3lock -i /home/l33tname/.config/i3/bg.png"
 
