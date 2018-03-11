@@ -13,11 +13,11 @@ cd dotfiles && ./bootstrap.sh laptop|desktop
 
 ## Common Problems
 
-**Q**: How can I run a single playbook?
-**A**: just run `ansible-playbook -i localhost, -c local --ask-become-pass function/$name.yml`
+**Q**: How can I run a single playbook?  
+**A**: just run `ansible-playbook -i localhost, -c local --ask-become-pass function/$name.yml`  
 
-**Q**: Which background image do you use?
-**A**: [Expedition 46 Landing (NHQ201603020016)](https://www.flickr.com/photos/nasahqphoto/25446711355/)
+**Q**: Which background image do you use?  
+**A**: [Expedition 46 Landing (NHQ201603020016)](https://www.flickr.com/photos/nasahqphoto/25446711355/)  
 
 ## Development
 
