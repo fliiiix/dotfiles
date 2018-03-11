@@ -7,6 +7,9 @@
 
 # install icons and themes
 - import_playbook: ../functions/hidpi_display_settings.yml
+- import_playbook: ../functions/i3.yml
+- import_playbook: ../functions/redshift.yml
+- import_playbook: ../functions/light.yml
 
 # configure core software
 - import_playbook: ../functions/grub_config.yml
@@ -16,9 +19,10 @@
 - import_playbook: ../functions/rawtojpg.yml
 
 # install core packages
-- import_playbook: ../functions/subl.yml 
+- import_playbook: ../functions/subl.yml
 - import_playbook: ../functions/mtpaint.yml
 - import_playbook: ../functions/zsh.yml
+- import_playbook: ../functions/firefox.yml
 
 # install additional packages
 - import_playbook: ../functions/enable_rpmfusion.yml
