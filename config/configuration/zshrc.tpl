@@ -16,5 +16,8 @@ compinit -i
 # custom bundle install
 alias bundll="bundle install --binstubs --path vendor"
 
+# socks proxy
+alias proxy="ssh -D 1080 -N socks"
+
 # Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/.rvm/bin"
