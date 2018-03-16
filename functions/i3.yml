@@ -3,9 +3,9 @@
   tasks:
   - name: ensure i3 is installed at the latest version
     become: yes
-    dnf: name=i3 state=latest
+    package: name=i3 state=latest
   - name: ensure i3lock is installed at the latest version
     become: yes
-    dnf: name=i3lock state=latest
+    package: name=i3lock state=latest
   - name: copy main config
     template: src=../config/configuration/i3.tpl dest=/home/{{ ansible_env.USER }}/.config/i3/config

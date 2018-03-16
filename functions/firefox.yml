@@ -3,7 +3,7 @@
   tasks:
   - name: ensure firefox is installed at the latest version
     become: yes
-    dnf: name=firefox state=latest
+    package: name=firefox state=latest
     # copy this file to show the bookmarks bar in fullscreen
     # https://shinglyu.github.io/web/2016/06/20/firefox_bookmark_toolbar_in_fullscreen.html
     # config/configuration/userChrome.css ~/.mozilla/firefox/xv8bkit6.default/chrome/userChrome.css

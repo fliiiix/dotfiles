@@ -3,4 +3,4 @@
   tasks:
   - name: ensure mtpaint is installed at the latest version
     become: yes
-    dnf: name=mtpaint state=latest
+    package: name=mtpaint state=latest

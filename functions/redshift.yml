@@ -3,4 +3,4 @@
   tasks:
   - name: ensure redshift is installed at the latest version
     become: yes
-    dnf: name=redshift state=latest
+    package: name=redshift state=latest

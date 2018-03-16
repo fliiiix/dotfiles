@@ -3,7 +3,7 @@
   become: yes
   tasks:
   - name: ensure that the dcraw|libjpeg-turbo-utils package is installed
-    dnf: state=present name={{ item }}
+    package: state=present name={{ item }}
     with_items:
       - dcraw
       - libjpeg-turbo-utils

@@ -5,7 +5,7 @@
   tasks:
   - name: ensure help2man is installed at the latest version
     become: yes
-    dnf: state=latest name={{ item }}
+    package: state=latest name={{ item }}
     with_items:
             - help2man
   - name: clone light

@@ -3,4 +3,4 @@
   tasks:
   - name: ensure thunderbird is installed at the latest version
     become: yes
-    dnf: name=thunderbird state=latest
+    package: name=thunderbird state=latest

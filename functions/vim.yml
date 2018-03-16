@@ -3,4 +3,4 @@
   tasks:
   - name: ensure vim is installed at the latest version
     become: yes
-    dnf: name=vim state=latest
+    package: name=vim state=latest

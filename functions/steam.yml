@@ -3,4 +3,4 @@
   tasks:
   - name: ensure that the steam package is installed
     become: yes
-    dnf: name=steam state=present
+    package: name=steam state=present

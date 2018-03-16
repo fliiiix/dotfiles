@@ -4,7 +4,7 @@
   tasks:
   - name: ensure scrot is installed at the latest version
     become: yes
-    dnf: state=latest name={{ item }}
+    package: state=latest name={{ item }}
     with_items:
       - scrot
       - libselinux-python # used for file permisions not sure why ^^ 

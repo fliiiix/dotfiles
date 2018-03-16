@@ -3,7 +3,7 @@
   tasks:
   - name: ensure that the vlc|mozilla-vlc package is installed
     become: yes
-    dnf: state=present name={{ item }}
+    package: state=present name={{ item }}
     with_items:
       - vlc
       - mozilla-vlc 
