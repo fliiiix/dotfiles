@@ -53,7 +53,7 @@ bindsym $mod+d exec dmenu_run
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
-bindsy $mod+Down focus down
+bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
@@ -159,7 +159,7 @@ bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
 # lockscreen
 bindsym $mod+l exec "i3lock -i /home/l33tname/.config/i3/bg.png"
 
-# background 
+# background
 exec_always --no-startup-id "feh --borderless --bg-scale /home/l33tname/.config/i3/bg.png"
 
 # keymap
@@ -168,8 +168,6 @@ exec_always --no-startup-id "setxkbmap -layout us,ch -option grp:shifts_toggle"
 # redshift
 exec_always --no-startup-id "redshift"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-        status_command i3status
-}
+# polybar
+exec_always --no-startup-id "/home/l33tname/.config/i3/bin/run_polybar.sh"
+
