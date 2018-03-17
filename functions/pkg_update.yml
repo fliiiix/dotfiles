@@ -3,4 +3,4 @@
   tasks:
   - name: update all packages
     become: yes
-    dnf: name=* state=latest
+    package: name=* state=latest

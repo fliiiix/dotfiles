@@ -1,7 +1,7 @@
 # setup for my laptop
 
 # setup mimimal tools to use linux
-- import_playbook: ../functions/dnf_update.yml
+- import_playbook: ../functions/pkg_update.yml
 - import_playbook: ../functions/vim.yml
 - import_playbook: ../functions/git.yml
 

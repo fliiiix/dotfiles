@@ -1,7 +1,7 @@
 # setup for my desktop
 
 # setup mimimal tools to use linux
-- include: ../functions/dnf_update.yml
+- include: ../functions/pkg_update.yml
 - include: ../functions/vim.yml
 - include: ../functions/git.yml
 
@@ -15,7 +15,7 @@
 # install core packages
 - include: ../functions/firefox.yml
 - include: ../functions/thunderbird.yml
-- include: ../functions/subl.yml 
+- include: ../functions/subl.yml
 - include: ../functions/mtpaint.yml
 - include: ../functions/zsh.yml
 
