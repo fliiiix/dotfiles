@@ -1,9 +1,0 @@
----
-- hosts: all
-  tasks:
-  - name: create the service file
-    become: yes
-    template: src=../config/configuration/setkeycodes_service.tpl dest=/etc/systemd/system/setkeycodes.service
-  - name: enabled the service
-    become: yes
-    systemd: name=setkeycodes.service state=started enabled=True
