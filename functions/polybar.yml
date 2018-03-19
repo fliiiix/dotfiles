@@ -51,3 +51,13 @@
     command: make chdir={{ destdir }}/build
   - name: install polybar
     command: make install chdir={{ destdir }}/build
+  # configuration
+  - name: copy the config
+    template: src=../config/configuration/polybar.tpl dest=/home/{{ ansible_env.USER  }}/.config/i3/polybar.conf
+  - name: ensure the i3 bin directory exists
+    file: path=/home/{{ ansible_env.USER }}/.config/i3/bin state=directory
+  - name: copy the wrapper script for i3
+    template: src=../config/scripts/run_polybar.tpl dest=/home/{{ ansible_env.USER  }}/.config/i3/bin/run_polybar.sh
+  - name: ensure file that the script has the right permisions
+    file: path=/home/{{ ansible_env.USER }}/.config/i3/bin/run_polybar.sh owner={{ ansible_env.USER }} group={{ ansible_env.USER }} mode=0755
+
