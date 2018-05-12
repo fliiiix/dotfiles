@@ -1,0 +1,22 @@
+# NOT TESTED
+# make sure /etc/default/grub has GRUB_CMDLINE_LINUX="rd.driver.blacklist=nouveau modprobe.blacklist=nouveau nvidia-drm.modeset=1
+# make sure /etc/gdm/custom.conf has WaylandEnable=false
+# reboot
+# check that lsmod | grep nouveau returns nothing
+
+- hosts: all
+  tasks:
+  - name: ensure that the basic driver is installed
+    package: state=present name={{ item }}
+    with_items:
+      - xorg-x11-drv-nvidia
+      - xorg-x11-drv-nvidia-cuda
+  - name: ensure that the video acceleration is installed
+    package: state=present name={{ item }}
+    with_items:
+      - vdpauinfo
+      - libva-vdpau-driver
+      - libva-utils
+  - name: update grub 
+    become: yes
+    command: grub2-mkconfig -o /boot/grub2/grub.cfg
