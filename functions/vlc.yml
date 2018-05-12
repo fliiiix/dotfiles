@@ -1,9 +1,8 @@
 ---
 - hosts: all
   tasks:
-  - name: ensure that the vlc|mozilla-vlc package is installed
+  - name: ensure that the vlc package is installed
     become: yes
     package: state=present name={{ item }}
     with_items:
       - vlc
-      - mozilla-vlc 
