@@ -7,7 +7,6 @@
     package: state=latest name={{ item }}
     with_items:
       - scrot
-      - libselinux-python # used for file permisions not sure why ^^ 
   - name: ensure that the screenshot dir exist
     file: path=/home/{{ ansible_env.USER }}/Pictures/screenshots state=directory
   - name: copy the screenshot script
