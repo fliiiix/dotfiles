@@ -31,7 +31,7 @@
         dest: "{{ destdir }}"
         update: yes
         force: yes
-        version: 3.1.0
+        version: 77d36b959df0ce5e129044697da2c306c355abeb
   - name: ensure that the build dir exist
     file: path={{ destdir }}/build state=directory
   - name: configure polybar
@@ -52,6 +52,8 @@
   - name: install polybar
     command: make install chdir={{ destdir }}/build
   # configuration
+  - name: ensure the i3 directory exists
+    file: path=/home/{{ ansible_env.USER }}/.config/i3 state=directory
   - name: copy the config
     template: src=../config/configuration/polybar.tpl dest=/home/{{ ansible_env.USER  }}/.config/i3/polybar.conf
   - name: ensure the i3 bin directory exists

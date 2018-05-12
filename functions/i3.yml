@@ -7,5 +7,13 @@
   - name: ensure i3lock is installed at the latest version
     become: yes
     package: name=i3lock state=latest
+  - name: ensure file that the script has the right permisions
+    become: yes
+    file: 
+      path: /home/{{ ansible_env.USER }}/.config/i3 
+      state: directory 
+      owner: "{{ ansible_env.USER }}" 
+      group: "{{ ansible_env.USER }}" 
+      mode: 0755
   - name: copy main config
     template: src=../config/configuration/i3.tpl dest=/home/{{ ansible_env.USER }}/.config/i3/config
