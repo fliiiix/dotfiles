@@ -1,12 +1,13 @@
 ---
 - hosts: all
   tasks:
-  - name: ensure i3 is installed at the latest version
+  - name: ensure that all dependencies are installed at the latest version
     become: yes
-    package: name=i3 state=latest
-  - name: ensure i3lock is installed at the latest version
-    become: yes
-    package: name=i3lock state=latest
+    package: state=latest name={{ item }}
+    with_items:
+      - i3
+      - i3lock
+      - terminator
   - name: ensure file that the script has the right permisions
     become: yes
     file: 
