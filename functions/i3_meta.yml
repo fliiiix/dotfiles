@@ -1,2 +1,3 @@
 - import_playbook: i3.yml
+- import_playbook: terminator.yml
 - import_playbook: polybar.yml
