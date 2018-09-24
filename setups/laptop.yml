@@ -19,7 +19,7 @@
 - import_playbook: ../functions/rawtojpg.yml
 
 # install core packages
-- import_playbook: ../functions/subl.yml
+- import_playbook: ../functions/subl_hidpi.yml
 - import_playbook: ../functions/mtpaint.yml
 - import_playbook: ../functions/zsh.yml
 - import_playbook: ../functions/firefox.yml
