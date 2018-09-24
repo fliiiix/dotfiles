@@ -2,10 +2,10 @@
 - hosts: all
   tasks:
   - name: download sublime_text and check checksum
-    get_url: 
-      url: https://download.sublimetext.com/sublime_text_3_build_3143_x64.tar.bz2
+    get_url:
+      url: https://download.sublimetext.com/sublime_text_3_build_3176_x64.tar.bz2
       dest: /tmp/sublime_text.tar.bz2
-      checksum: md5:9c4a9d09a4463caedb49e7742bed369f
+      checksum: md5:7d4c8c5167224888d901e8cbafb6ec7f
   - name: unpack sublime_text
     become: yes
     unarchive: src=/tmp/sublime_text.tar.bz2 dest=/usr/local/src
