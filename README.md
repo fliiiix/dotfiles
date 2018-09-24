@@ -22,4 +22,4 @@ cd dotfiles && ./bootstrap.sh laptop|desktop
 ## Development
 
 Feel free to fork it, test it and submit patches! Or just use it as base
-for your own dotfiles. Scripts are only testet with the Fedora versions I'm using.
+for your own dotfiles. Scripts are only tested with the Fedora versions I'm using.
