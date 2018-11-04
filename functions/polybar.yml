@@ -16,7 +16,9 @@
             - xcb-util-wm-devel
             - xcb-util-image-devel
             - xcb-util-cursor-devel
+            - libxcb-devel
             - wireless-tools-devel
+            - libnl3-devel
             # i3
             - i3-ipc
             - jsoncpp-devel
@@ -31,7 +33,7 @@
         dest: "{{ destdir }}"
         update: yes
         force: yes
-        version: 77d36b959df0ce5e129044697da2c306c355abeb
+        version: 07d35df538b7b016997d1c7fe9995bf038901dbd
   - name: ensure that the build dir exist
     file: path={{ destdir }}/build state=directory
   - name: configure polybar
@@ -48,7 +50,7 @@
     args:
         chdir: "{{ destdir }}/build"
   - name: build polybar
-    command: make chdir={{ destdir }}/build
+    command: make -j chdir={{ destdir }}/build
   - name: install polybar
     command: make install chdir={{ destdir }}/build
   # configuration
