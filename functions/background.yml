@@ -1,0 +1,12 @@
+---
+- hosts: all
+  tasks:
+  - name: ensure that all dependencies are installed at the latest version
+    become: yes
+    package: state=latest name={{ item }}
+    with_items:
+      - feh
+  - name: copy background image to i3 folder
+    copy: src=../config/bg.png dest=/home/{{ ansible_env.USER }}/.config/i3/bg.png
+
+

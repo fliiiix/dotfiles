@@ -157,10 +157,10 @@ bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
 
 # lockscreen
-bindsym $mod+l exec "i3lock -i /home/l33tname/.config/i3/bg.png"
+bindsym $mod+l exec "i3lock --tiling --ignore-empty-password --show-failed-attempts -i /home/l33tname/.config/i3/bg.png"
 
 # background
-exec_always --no-startup-id "feh --borderless --bg-scale /home/l33tname/.config/i3/bg.png"
+exec_always --no-startup-id "feh --borderless --bg-fill /home/l33tname/.config/i3/bg.png"
 
 # keymap
 exec_always --no-startup-id "setxkbmap -layout us,ch -option grp:shifts_toggle"

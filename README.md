@@ -17,7 +17,7 @@ cd dotfiles && ./bootstrap.sh laptop|desktop
 **A**: just run `ansible-playbook -i localhost, -c local --ask-become-pass functions/$name.yml`
 
 **Q**: Which background image do you use?
-**A**: [Expedition 46 Landing (NHQ201603020016)](https://www.flickr.com/photos/nasahqphoto/25446711355/)
+**A**: [untitled by Masashi Wakui](https://www.flickr.com/photos/megane_wakui/32109503744/in/photostream/)
 
 ## Development
 
