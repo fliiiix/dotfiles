@@ -38,7 +38,6 @@ modules-right = battery
 
 tray-position = right
 tray-padding = 9
-tray-transparent = false
 tray-offset-y = 0%
 tray-offset-x = 0%
 tray-maxsize = 18

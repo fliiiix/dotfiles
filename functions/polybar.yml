@@ -27,6 +27,8 @@
             - pulseaudio-libs-devel
             # curl
             - libcurl-devel
+            # fonts for config
+            - fontawesome-fonts.noarch
   - name: clone polybar
     git:
         repo: https://github.com/jaagr/polybar.git
