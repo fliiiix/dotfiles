@@ -72,14 +72,10 @@ module-margin-right = 1
 
 font-0 = Hack:fontformat=truetype:size=16;3
 font-1 = FontAwesome:fontformat=truetype:size=16;3
-;font-2 = Unifont Upper
 
 modules-left = i3
 modules-center = filesystem mem cpu
 modules-right = volume lan wifi date
-
-tray-position =
-
 
 [module/i3]
 type = internal/i3
@@ -138,19 +134,13 @@ adapter = ADP1
 
 full-at = 99
 
-;format-full-background = #0F0
-;format-charging-background = ${colors.my_background}
 format-charging = " <animation-charging> <label-charging> "
-;format-charging-underline = ${colors.my_color7}
 
 format-discharging-background = ${colors.my_background}
 format-discharging = "⁣ <ramp-capacity> <label-discharging> "
-;format-discharging-underline = ${self.format-charging-underline}
-
 
 format-full-prefix-foreground = ${colors.my_background}
 label-full =  full
-;format-full-underline = ${self.format-charging-underline}
 
 format-charing-background = ${colors.my_background}
 
@@ -171,10 +161,6 @@ animation-charging-framerate = 750
 
 [settings]
 screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
 
 [module/lan]
 type = internal/network
