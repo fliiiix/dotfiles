@@ -35,7 +35,7 @@
         dest: "{{ destdir }}"
         update: yes
         force: yes
-        version: 07d35df538b7b016997d1c7fe9995bf038901dbd
+        version: 3.3.0
   - name: ensure that the build dir exist
     file: path={{ destdir }}/build state=directory
   - name: configure polybar
