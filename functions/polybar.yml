@@ -52,7 +52,7 @@
     args:
         chdir: "{{ destdir }}/build"
   - name: build polybar
-    command: make -j chdir={{ destdir }}/build
+    command: make -j 4 chdir={{ destdir }}/build
   - name: install polybar
     command: make install chdir={{ destdir }}/build
   # configuration
