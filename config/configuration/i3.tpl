@@ -152,6 +152,9 @@ bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
 # lockscreen
 bindsym $mod+l exec "i3lock --tiling --ignore-empty-password --show-failed-attempts -i /home/l33tname/.config/i3/bg.png"
 
+# all the good unicode characters
+bindsym $mod+u exec --no-startup-id rofi -lines 10 -dmenu -input ~/.symbols.txt | cut -d' ' -f1 -z | xclip -selection c
+
 # background
 exec_always --no-startup-id "feh --borderless --bg-fill /home/l33tname/.config/i3/bg.png"
 

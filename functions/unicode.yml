@@ -1,0 +1,11 @@
+---
+- hosts: all
+  tasks:
+  - name: ensure that all dependencies are installed at the latest version
+    package: state=latest name={{ item }}
+    with_items:
+            - rofi
+            - xclip
+  - name: copy main config
+    template: src=../config/configuration/symbols.txt dest=/home/{{ ansible_env.USER }}/.symbols.txt
+
