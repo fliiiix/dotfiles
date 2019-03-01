@@ -1,5 +1,5 @@
-dotfiles
-========
+p1ng
+====
 
 My personal dotfiles to configure a Fedora linux, always in work never finished.
 
