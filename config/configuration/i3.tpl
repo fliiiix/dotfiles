@@ -150,13 +150,15 @@ bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
 
 # lockscreen
-bindsym $mod+l exec "i3lock --tiling --ignore-empty-password --show-failed-attempts -i /home/l33tname/.config/i3/bg.png"
+bindsym $mod+l exec "i3lock --tiling --ignore-empty-password --show-failed-attempts -i $HOME/.config/i3/bg.png"
 
-# all the good unicode characters
+# mod+u all the good unicode characters
 bindsym $mod+u exec --no-startup-id rofi -lines 10 -dmenu -input ~/.symbols.txt | cut -d' ' -f1 -z | xclip -selection c
+# mod+p for pass manager
+bindsym $mod+p exec $HOME/.config/i3/bin/rofi_pass.sh
 
 # background
-exec_always --no-startup-id "feh --borderless --bg-fill /home/l33tname/.config/i3/bg.png"
+exec_always --no-startup-id "feh --borderless --bg-fill $HOME/.config/i3/bg.png"
 
 # keymap
 exec_always --no-startup-id "setxkbmap -layout us,ch -option grp:shifts_toggle"
@@ -165,7 +167,7 @@ exec_always --no-startup-id "setxkbmap -layout us,ch -option grp:shifts_toggle"
 exec_always --no-startup-id "redshift"
 
 # polybar
-exec_always --no-startup-id "/home/l33tname/.config/i3/bin/run_polybar.sh"
+exec_always --no-startup-id "$HOME/.config/i3/bin/run_polybar.sh"
 
 # resize firefox popup windows
 for_window [class="^[fF]irefox" title="^Save As$"] floating enable, resize set 1200 800, move position center
