@@ -3,9 +3,9 @@
   tasks:
   - name: download sublime_text and check checksum
     get_url:
-      url: https://download.sublimetext.com/sublime_text_3_build_3200_x64.tar.bz2
+      url: https://download.sublimetext.com/sublime_text_3_build_3207_x64.tar.bz2
       dest: /tmp/sublime_text.tar.bz2
-      checksum: md5:38e093fadf9906afad30bf83febd9523
+      checksum: md5:187d5f46fdf8b628fbc4686984591529
   - name: unpack sublime_text
     become: yes
     unarchive: src=/tmp/sublime_text.tar.bz2 dest=/usr/local/src
