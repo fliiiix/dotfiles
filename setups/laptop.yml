@@ -4,6 +4,7 @@
 - import_playbook: ../functions/pkg_update.yml
 - import_playbook: ../functions/vim.yml
 - import_playbook: ../functions/git.yml
+- import_playbook: ../functions/audio.yml
 
 # install icons and themes
 - import_playbook: ../functions/hidpi_display_settings.yml

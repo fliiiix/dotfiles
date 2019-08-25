@@ -1,0 +1,6 @@
+---
+- hosts: all
+  tasks:
+  - name: ensure pavucontrol is installed at the latest version
+    become: yes
+    package: name=pavucontrol state=latest
