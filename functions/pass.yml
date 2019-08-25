@@ -3,9 +3,9 @@
   become: yes
   tasks:
   - name: ensure the i3 bin directory exists
-    file: path=/home/{{ ansible_env.USER }}/.config/i3/bin state=directory
+    file: path=/home/{{ ansible_env.USERNAME }}/.config/i3/bin state=directory
   - name: copy the rofi config script
-    template: src=../config/scripts/run_pass.tpl dest=/home/{{ ansible_env.USER  }}/.config/i3/bin/run_pass.sh
+    template: src=../config/scripts/rofi_pass.tpl dest=/home/{{ ansible_env.USERNAME  }}/.config/i3/bin/rofi_pass.sh
   - name: ensure file that the script has the right permisions
-    file: path=/home/{{ ansible_env.USER }}/.config/i3/bin/run_pass.sh owner={{ ansible_env.USER }} group={{ ansible_env.USER }} mode=0755
+    file: path=/home/{{ ansible_env.USERNAME }}/.config/i3/bin/rofi_pass.sh owner={{ ansible_env.USERNAME }} group={{ ansible_env.USERNAME }} mode=0755
 

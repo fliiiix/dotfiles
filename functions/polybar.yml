@@ -8,6 +8,7 @@
     package: state=latest name={{ item }}
     with_items:
             # development
+            - make
             - cmake
             - clang
             - cairo-devel
@@ -35,7 +36,7 @@
         dest: "{{ destdir }}"
         update: yes
         force: yes
-        version: ca4426a9620f4db05a0117282fbed3a32a14ec92
+        version: 4ea188b3f93290aeb30ddfc5ce920fe14d605858
   - name: ensure that the build dir exist
     file: path={{ destdir }}/build state=directory
   - name: configure polybar
@@ -57,13 +58,13 @@
     command: make install chdir={{ destdir }}/build
   # configuration
   - name: ensure the i3 directory exists
-    file: path=/home/{{ ansible_env.USER }}/.config/i3 state=directory
+    file: path=/home/{{ ansible_env.USERNAME }}/.config/i3 state=directory
   - name: copy the config
-    template: src=../config/configuration/polybar.tpl dest=/home/{{ ansible_env.USER  }}/.config/i3/polybar.conf
+    template: src=../config/configuration/polybar.tpl dest=/home/{{ ansible_env.USERNAME  }}/.config/i3/polybar.conf
   - name: ensure the i3 bin directory exists
-    file: path=/home/{{ ansible_env.USER }}/.config/i3/bin state=directory
+    file: path=/home/{{ ansible_env.USERNAME }}/.config/i3/bin state=directory
   - name: copy the wrapper script for i3
-    template: src=../config/scripts/run_polybar.tpl dest=/home/{{ ansible_env.USER  }}/.config/i3/bin/run_polybar.sh
+    template: src=../config/scripts/run_polybar.tpl dest=/home/{{ ansible_env.USERNAME  }}/.config/i3/bin/run_polybar.sh
   - name: ensure file that the script has the right permisions
-    file: path=/home/{{ ansible_env.USER }}/.config/i3/bin/run_polybar.sh owner={{ ansible_env.USER }} group={{ ansible_env.USER }} mode=0755
+    file: path=/home/{{ ansible_env.USERNAME }}/.config/i3/bin/run_polybar.sh owner={{ ansible_env.USERNAME }} group={{ ansible_env.USERNAME }} mode=0755
 

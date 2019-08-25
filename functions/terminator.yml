@@ -9,10 +9,10 @@
   - name: ensure file that the config directory has the right permisions
     become: yes
     file:
-      path: /home/{{ ansible_env.USER }}/.config/terminator
+      path: /home/{{ ansible_env.USERNAME }}/.config/terminator
       state: directory
-      owner: "{{ ansible_env.USER }}"
-      group: "{{ ansible_env.USER }}"
+      owner: "{{ ansible_env.USERNAME }}"
+      group: "{{ ansible_env.USERNAME }}"
       mode: 0755
   - name: copy main config
-    template: src=../config/configuration/terminator.tpl dest=/home/{{ ansible_env.USER }}/.config/terminator/config
+    template: src=../config/configuration/terminator.tpl dest=/home/{{ ansible_env.USERNAME }}/.config/terminator/config

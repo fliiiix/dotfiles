@@ -2,7 +2,7 @@
 - hosts: all
   tasks:
   - name: copy local xinitrc config
-    template: src=../config/configuration/xinitrc.tpl dest=/home/{{ ansible_env.USER }}/.xinitrc
+    template: src=../config/configuration/xinitrc.tpl dest=/home/{{ ansible_env.USERNAME }}/.xinitrc
   - name: copy local Xresources config
-    template: src=../config/configuration/Xresources.tpl dest=/home/{{ ansible_env.USER }}/.Xresources
+    template: src=../config/configuration/Xresources.tpl dest=/home/{{ ansible_env.USERNAME }}/.Xresources
     # restart your X server to use this changes

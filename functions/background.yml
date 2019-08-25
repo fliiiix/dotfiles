@@ -7,6 +7,6 @@
     with_items:
       - feh
   - name: copy background image to i3 folder
-    copy: src=../config/bg.png dest=/home/{{ ansible_env.USER }}/.config/i3/bg.png
+    copy: src=../config/bg.png dest=/home/{{ ansible_env.USERNAME }}/.config/i3/bg.png
 
 
