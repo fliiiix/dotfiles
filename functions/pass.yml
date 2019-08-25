@@ -2,10 +2,14 @@
 - hosts: all
   become: yes
   tasks:
+  # the private key needs to be imported with gpg --import 
+  # for this to work 
+  - name: ensure pass is installed at the latest version
+    become: yes
+    package: name=pass state=latest
   - name: ensure the i3 bin directory exists
     file: path=/home/{{ ansible_env.USERNAME }}/.config/i3/bin state=directory
   - name: copy the rofi config script
     template: src=../config/scripts/rofi_pass.tpl dest=/home/{{ ansible_env.USERNAME  }}/.config/i3/bin/rofi_pass.sh
   - name: ensure file that the script has the right permisions
     file: path=/home/{{ ansible_env.USERNAME }}/.config/i3/bin/rofi_pass.sh owner={{ ansible_env.USERNAME }} group={{ ansible_env.USERNAME }} mode=0755
-
