@@ -274,7 +274,7 @@ bar-used-empty-foreground = #444444
 
 
 [module/volume]
-type = internal/volume
+type = internal/alsa
 
 ; Soundcard to be used
 ; Usually in the format hw:#
