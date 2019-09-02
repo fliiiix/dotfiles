@@ -2,7 +2,7 @@
 - hosts: all
   tasks:
   - name: configure the git username
-    git_config: name=user.name value="fliiiix" scope=global
+    git_config: name=user.name value="Felix" scope=global
   - name: configure the git email
     git_config: name=user.email value="hi@l33t.name" scope=global
   - name: set the default push behavior to simple
