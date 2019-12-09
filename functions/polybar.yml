@@ -21,6 +21,7 @@
             - wireless-tools-devel
             - libnl3-devel
             # i3
+            - i3-devel
             - i3-ipc
             - jsoncpp-devel
             # Volume
