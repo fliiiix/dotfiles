@@ -4,3 +4,4 @@
 - import_playbook: polybar.yml
 - import_playbook: unicode.yml
 - import_playbook: pass.yml
+- import_playbook: wifi.yml

@@ -164,7 +164,10 @@ exec_always --no-startup-id "feh --borderless --bg-fill $HOME/.config/i3/bg.png"
 exec_always --no-startup-id "setxkbmap -layout us,ch -option grp:shifts_toggle"
 
 # redshift
-exec_always --no-startup-id "redshift"
+exec --no-startup-id "redshift"
+
+# nm-applet
+exec --no-startup-id nm-applet --sm-disable
 
 # polybar
 exec_always --no-startup-id "$HOME/.config/i3/bin/run_polybar.sh"
