@@ -14,6 +14,7 @@ autoload -U compinit
 compinit -i
 
 # custom bundle install
+alias bundlsetup="bundle config set path 'vendor'"
 alias bundll="bundle install --binstubs --path vendor"
 
 # socks proxy
