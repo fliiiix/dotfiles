@@ -22,7 +22,6 @@
             - libnl3-devel
             # i3
             - i3-devel
-            - i3-ipc
             - jsoncpp-devel
             # Volume
             - alsa-lib-devel
@@ -37,7 +36,7 @@
         dest: "{{ destdir }}"
         update: yes
         force: yes
-        version: 3.4.1
+        version: 3.4.3
   - name: ensure that the build dir exist
     file: path={{ destdir }}/build state=directory
   - name: configure polybar
