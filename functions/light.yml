@@ -1,24 +1,6 @@
 ---
 - hosts: all
-  vars:
-      destdir: /usr/local/src/light
   tasks:
-  - name: ensure help2man is installed at the latest version
+  - name: ensure light is installed at the latest version
     become: yes
-    package: state=latest name={{ item }}
-    with_items:
-            - help2man
-  - name: clone light
-    become: yes
-    git: 
-        repo: https://github.com/haikarainen/light.git 
-        dest: "{{ destdir }}"
-        update: yes 
-        force: yes
-        version: v1.0 
-  - name: build light
-    become: yes
-    command: make chdir={{ destdir }}
-  - name: install light
-    become: yes
-    command: make install chdir={{ destdir }}
+    package: name=light state=latest
