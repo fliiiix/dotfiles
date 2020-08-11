@@ -2,11 +2,11 @@
 ---
 - hosts: all
   tasks:
-  - name: ensure scrot is installed at the latest version
+  - name: ensure flameshot is installed at the latest version
     become: yes
     package: state=latest name={{ item }}
     with_items:
-      - scrot
+      - flameshot
   - name: ensure that the screenshot dir exist
     file: path=/home/{{ ansible_env.USERNAME }}/Pictures/screenshots state=directory
   - name: copy the screenshot script
