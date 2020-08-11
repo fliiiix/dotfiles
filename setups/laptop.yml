@@ -25,6 +25,7 @@
 - import_playbook: ../functions/mtpaint.yml
 - import_playbook: ../functions/zsh.yml
 - import_playbook: ../functions/firefox.yml
+- import_playbook: ../functions/firewall.yml
 
 # install additional packages
 - import_playbook: ../functions/enable_rpmfusion.yml

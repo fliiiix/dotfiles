@@ -1,0 +1,6 @@
+---
+- hosts: all
+  tasks:
+  - name: ensure firewall-config is installed at the latest version
+    become: yes
+    package: name=firewall-config state=latest
