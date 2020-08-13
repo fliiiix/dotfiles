@@ -1,6 +1,11 @@
 ---
 - hosts: all
   tasks:
+  - name: ensure that all dependencies are installed at the latest version
+    package: state=latest name={{ item }}
+    with_items:
+      - git
+      - tig
   - name: configure the git username
     git_config: name=user.name value="fliiiix" scope=global
   - name: configure the git email
