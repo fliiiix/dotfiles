@@ -3,6 +3,7 @@
   tasks:
   - name: ensure that all dependencies are installed at the latest version
     package: state=latest name={{ item }}
+    become: yes
     with_items:
       - git
       - tig
