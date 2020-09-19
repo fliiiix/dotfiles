@@ -20,6 +20,7 @@
 # install core packages
 - import_playbook: ../functions/firefox.yml
 - import_playbook: ../functions/firewall.yml
+- import_playbook: ../functions/gigolo.yml
 - import_playbook: ../functions/mtpaint.yml
 - import_playbook: ../functions/subl.yml
 - import_playbook: ../functions/thunderbird.yml

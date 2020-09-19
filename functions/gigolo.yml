@@ -1,0 +1,6 @@
+---
+- hosts: all
+  tasks:
+  - name: ensure gigolo is installed at the latest version
+    become: yes
+    package: name=gigolo state=latest
