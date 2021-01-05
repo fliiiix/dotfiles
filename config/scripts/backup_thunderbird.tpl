@@ -7,7 +7,7 @@ if [[ $? -ne 1 ]] ; then
 fi
 
 
-PROFIL_DIR=`grep -o '.\{8\}\.default' /home/${USER}/.thunderbird/profiles.ini`
+PROFIL_DIR=`grep -o '.\{8\}\.default.*' /home/${USER}/.thunderbird/profiles.ini`
 echo "found: ${PROFIL_DIR}"
 
 echo "creating tar.gz"
