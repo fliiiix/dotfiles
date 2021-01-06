@@ -18,6 +18,7 @@
 - import_playbook: ../functions/rawtojpg.yml
 
 # install core packages
+- import_playbook: ../functions/audacity.yml
 - import_playbook: ../functions/firefox.yml
 - import_playbook: ../functions/firewall.yml
 - import_playbook: ../functions/gigolo.yml
