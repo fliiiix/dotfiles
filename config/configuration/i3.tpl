@@ -175,3 +175,6 @@ exec_always --no-startup-id "$HOME/.config/i3/bin/run_polybar.sh"
 # resize firefox popup windows
 for_window [class="^[fF]irefox" title="^Save As$"] floating enable, resize set 1200 800, move position center
 for_window [class="^[fF]irefox" title="^Choose Download Folder:$"] floating enable, resize set 1200 800, move position center
+
+# start flameshot for a screenshot
+bindsym Print exec flameshot gui
