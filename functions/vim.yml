@@ -4,3 +4,9 @@
   - name: ensure vim is installed at the latest version
     become: yes
     package: name=vim state=latest
+  # https://docs.ansible.com/ansible/latest/collections/ansible/builtin/dnf_module.html#parameter-allowerasing 
+  # added in 2.10 of ansible.builtin 
+  # prob breaks because old ansible...
+  - name: ensure vim is the default editor
+    become: yes
+    package: name=vim-default-editor state=latest allowerasing=yes
