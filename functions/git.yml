@@ -13,3 +13,5 @@
     git_config: name=user.email value="hi@l33t.name" scope=global
   - name: set the default push behavior to simple
     git_config: name=push.default value=simple scope=global
+  - name: set the default branch name to main
+    git_config: name=init.defaultBranch value=main scope=global
