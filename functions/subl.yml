@@ -3,12 +3,20 @@
   tasks:
   - name: download sublime_text and check checksum
     get_url:
-      url: https://download.sublimetext.com/sublime_text_3_build_3211_x64.tar.bz2
-      dest: /tmp/sublime_text.tar.bz2
-      checksum: md5:9438d5ef592df91ba41e5488e690b7e5
+      url: https://download.sublimetext.com/sublime_text_build_4113_x64.tar.xz
+      dest: /tmp/sublime_text.tar.xz
+      checksum: md5:984f05273a97ad7fc9a9b7f8d7044dda
+  - name: create directory to unpack
+    become: yes
+    ansible.builtin.file:
+      path: /usr/local/src/sublime_text_4
+      state: directory
   - name: unpack sublime_text
     become: yes
-    unarchive: src=/tmp/sublime_text.tar.bz2 dest=/usr/local/src
+    unarchive: src=/tmp/sublime_text.tar.xz dest=/usr/local/src/sublime_text_4
   - name: create bin symlink
     become: yes
-    file: src=/usr/local/src/sublime_text_3/sublime_text dest=/usr/local/bin/subl state=link
+    ansible.builtin.file:
+      src: /usr/local/src/sublime_text_4/sublime_text/sublime_text
+      dest: /usr/local/bin/subl
+      state: link
