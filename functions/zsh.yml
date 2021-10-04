@@ -5,13 +5,13 @@
     become: yes
     package: name=zsh state=latest
   - name: copy zsh config dir
-    copy: src=../config/zsh/ dest=/home/{{ ansible_env.USERNAME }}/.zsh/
+    copy: src=../config/zsh/ dest="{{ ansible_env.HOME }}/.zsh/"
   - name: download zsh-autosuggestions
     get_url:
       url: https://raw.githubusercontent.com/zsh-users/zsh-autosuggestions/master/zsh-autosuggestions.zsh
-      dest: /home/{{ ansible_env.USERNAME }}/.zsh/
+      dest: "{{ ansible_env.HOME }}/.zsh/"
   - name: copy main config
-    template: src=../config/configuration/zshrc.tpl dest=/home/{{ ansible_env.USERNAME }}/.zshrc
+    template: src=../config/configuration/zshrc.tpl dest="{{ ansible_env.HOME }}/.zshrc"
   - name: change default shell to zsh
     become: yes
     user: name={{ ansible_env.USERNAME }} shell=/bin/zsh
