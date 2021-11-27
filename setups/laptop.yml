@@ -27,6 +27,7 @@
 - import_playbook: ../functions/subl.yml
 - import_playbook: ../functions/subl_hidpi.yml
 - import_playbook: ../functions/zsh.yml
+- import_playbook: ../functions/arandr.yml
 
 # install additional packages
 - import_playbook: ../functions/enable_rpmfusion.yml

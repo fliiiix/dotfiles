@@ -1,0 +1,6 @@
+---
+- hosts: all
+  tasks:
+  - name: ensure arandr is installed at the latest version
+    become: yes
+    package: name=arandr state=latest
