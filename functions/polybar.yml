@@ -1,61 +1,9 @@
 ---
 - hosts: all
   become: yes
-  vars:
-      destdir: /usr/local/src/polybar
   tasks:
-  - name: ensure that all dependencies are installed at the latest version
-    package: state=latest name={{ item }}
-    with_items:
-            # development
-            - make
-            - cmake
-            - clang
-            - cairo-devel
-            - xcb-proto
-            - xcb-util-devel
-            - xcb-util-wm-devel
-            - xcb-util-image-devel
-            - xcb-util-cursor-devel
-            - libxcb-devel
-            - wireless-tools-devel
-            - libnl3-devel
-            # i3
-            - i3-devel
-            - jsoncpp-devel
-            # Volume
-            - alsa-lib-devel
-            - pulseaudio-libs-devel
-            # curl
-            - libcurl-devel
-            # fonts for config
-            - fontawesome-fonts.noarch
-  - name: clone polybar
-    git:
-        repo: https://github.com/jaagr/polybar.git
-        dest: "{{ destdir }}"
-        update: yes
-        force: yes
-        version: 3.5.3
-  - name: ensure that the build dir exist
-    file: path={{ destdir }}/build state=directory
-  - name: configure polybar
-    command: >
-        cmake -DCMAKE_C_COMPILER="clang"
-              -DCMAKE_CXX_COMPILER="clang++"
-              -DCMAKE_BUILD_TYPE="RELEASE"
-              -DENABLE_ALSA:BOOL="ON"
-              -DENABLE_I3:BOOL="ON"
-              -DENABLE_MPD:BOOL="OFF"
-              -DENABLE_NETWORK:BOOL="ON"
-              -DENABLE_CURL:BOOL="ON"
-              -DBUILD_IPC_MSG:BOOL="ON" ..
-    args:
-        chdir: "{{ destdir }}/build"
-  - name: build polybar
-    command: make -j 4 chdir={{ destdir }}/build
-  - name: install polybar
-    command: make install chdir={{ destdir }}/build
+  - name: ensure polybar is installed at the latest version
+    package: name=polybar state=latest
   # configuration
   - name: ensure the i3 directory exists
     file: path=/home/{{ ansible_env.USERNAME }}/.config/i3 state=directory
