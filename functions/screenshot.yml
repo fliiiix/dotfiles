@@ -8,7 +8,7 @@
     with_items:
       - flameshot
   - name: ensure that the screenshot dir exist
-    file: path=/home/{{ ansible_env.USERNAME }}/Pictures/screenshots state=directory
+    file: path={{ ansible_env.HOME }}/Pictures/screenshots state=directory
   - name: copy the screenshot script
     become: yes
     template: src=../config/scripts/screenshot.tpl dest=/usr/local/bin/screenshot

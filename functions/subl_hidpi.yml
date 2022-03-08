@@ -4,9 +4,9 @@
 - hosts: all
   tasks:
       - name: ensure that the subl config dir exist
-        file: path=/home/{{ ansible_env.USERNAME }}/.config/sublime-text-3/Packages/User state=directory
+        file: path={{ ansible_env.HOME }}/.config/sublime-text-3/Packages/User state=directory
       - name: copy config
         template:
             src: ../config/configuration/Preferences.sublime-settings.tpl
-            dest: /home/{{ ansible_env.USERNAME }}/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
+            dest: {{ ansible_env.HOME }}/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
 

@@ -8,5 +8,5 @@
             - rofi
             - xclip
   - name: copy main config
-    template: src=../config/configuration/symbols.txt dest=/home/{{ ansible_env.USERNAME }}/.symbols.txt
+    template: src=../config/configuration/symbols.txt dest={{ ansible_env.HOME }}/.symbols.txt
 
