@@ -1,6 +1,5 @@
 ---
 - hosts: all
-  become: yes
   tasks:
   # the private key needs to be imported with gpg --import 
   # for this to work 
