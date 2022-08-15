@@ -1,12 +1,20 @@
 ---
 - hosts: all
+  become: yes
   tasks:
+  - name: Importing (free) key
+    ansible.builtin.rpm_key:
+      state: present
+      key: https://rpmfusion.org/keys?action=AttachFile&do=get&target=RPM-GPG-KEY-rpmfusion-free-fedora-2020
+      fingerprint: "E9A4 91A3 DE24 7814 E7E0 67EA E06F 8ECD D651 FF2E"
+  - name: Importing (non-free) key
+    ansible.builtin.rpm_key:
+      state: present
+      key: https://rpmfusion.org/keys?action=AttachFile&do=get&target=RPM-GPG-KEY-rpmfusion-nonfree-fedora-2020
+      fingerprint: "79BD B88F 9BBF 7391 0FD4 095B 6A2A F961 9484 3C65"
   - name: enable rpmfusion free repo
-    become: yes
     dnf: name=https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_version }}.noarch.rpm state=present
   - name: enable rpmfusion nonfree repo
-    become: yes
     dnf: name=https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_version }}.noarch.rpm state=present
   - name: update all packages
-    become: yes
     dnf: name=* state=latest
