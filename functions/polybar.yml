@@ -1,16 +1,20 @@
 ---
 - hosts: all
-  become: yes
   tasks:
   - name: ensure polybar is installed at the latest version
+    become: yes
     package: name=polybar state=latest
   # configuration
   - name: ensure the i3 directory exists
-    file: path={{ ansible_env.HOME }}/.config/i3 state=directory
+    ansible.builtin.file:
+      path: "{{ ansible_env.HOME }}/.config/i3"
+      state: directory
   - name: copy the config
     template: src=../config/configuration/polybar.tpl dest={{ ansible_env.HOME  }}/.config/i3/polybar.conf
   - name: ensure the i3 bin directory exists
-    file: path={{ ansible_env.HOME }}/.config/i3/bin state=directory
+    ansible.builtin.file:
+      path: "{{ ansible_env.HOME }}/.config/i3/bin"
+      state: directory
   - name: copy the wrapper script for i3
     template: src=../config/scripts/run_polybar.tpl dest={{ ansible_env.HOME  }}/.config/i3/bin/run_polybar.sh
   - name: ensure file that the script has the right permisions
