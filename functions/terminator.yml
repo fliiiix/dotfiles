@@ -9,7 +9,7 @@
   - name: ensure file that the config directory has the right permisions
     become: yes
     file:
-      path: {{ ansible_env.HOME }}/.config/terminator
+      path: "{{ ansible_env.HOME }}/.config/terminator"
       state: directory
       owner: "{{ ansible_env.USERNAME }}"
       group: "{{ ansible_env.USERNAME }}"
