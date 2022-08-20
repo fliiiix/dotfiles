@@ -4,6 +4,9 @@
   - name: ensure polybar is installed at the latest version
     become: yes
     package: name=polybar state=latest
+  - name: ensure icon font is installed at the latest version
+    become: yes
+    package: name=fontawesome-fonts state=latest
   # configuration
   - name: ensure the i3 directory exists
     ansible.builtin.file:
