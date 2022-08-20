@@ -24,6 +24,7 @@
 - import_playbook: ../functions/firewall.yml
 - import_playbook: ../functions/gigolo.yml
 - import_playbook: ../functions/mtpaint.yml
+- import_playbook: ../functions/signal.yml
 - import_playbook: ../functions/subl.yml
 - import_playbook: ../functions/thunderbird.yml
 - import_playbook: ../functions/zsh.yml
