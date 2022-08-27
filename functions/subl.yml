@@ -20,3 +20,12 @@
       src: /usr/local/src/sublime_text_4/sublime_text/sublime_text
       dest: /usr/local/bin/subl
       state: link
+  # I think there should be a smarter way than c&p from subl_hidpi.yml
+  - name: ensure that the subl config dir exist (needs to run after subl.yml)
+    file: path={{ ansible_env.HOME }}/.config/sublime-text-3/Packages/User state=directory
+  - name: copy config
+    vars:
+      is_high_dpi: False
+    template:
+        src: ../config/configuration/Preferences.sublime-settings.tpl
+        dest: "{{ ansible_env.HOME }}/.config/sublime-text-3/Packages/User/Preferences.sublime-settings"

@@ -1,11 +1,9 @@
 ---
-#- import_playbook: subl.yml
-
 - hosts: all
   tasks:
-      - name: ensure that the subl config dir exist
-        file: path={{ ansible_env.HOME }}/.config/sublime-text-3/Packages/User state=directory
-      - name: copy config
+      - name: copy config for high dpi
+        vars:
+          is_high_dpi: True
         template:
             src: ../config/configuration/Preferences.sublime-settings.tpl
             dest: "{{ ansible_env.HOME }}/.config/sublime-text-3/Packages/User/Preferences.sublime-settings"
