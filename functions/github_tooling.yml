@@ -1,0 +1,17 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: ensure config manager is installed
+      ansible.builtin.dnf:
+        name: "dnf-command(config-manager)"
+        state: latest
+    - name: Add GitHub tooling repo"
+      ansible.builtin.yum_repository:
+        name: github-tools
+        description: Github tooling repo
+        baseurl: "https://cli.github.com/packages/rpm/gh-cli.repo"
+    - name: Install github tooling
+      ansible.builtin.dnf:
+        name: "gh"
+        state: latest
