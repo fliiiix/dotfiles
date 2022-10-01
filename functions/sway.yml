@@ -5,15 +5,15 @@
     become: yes
     package: state=latest name={{ item }}
     with_items:
-      - i3
-      - i3lock
+      - sway
+      - swaylock
   - name: ensure file that the config directory has the right permisions
     become: yes
     file:
-      path: "{{ ansible_env.HOME }}/.config/i3"
+      path: "{{ ansible_env.HOME }}/.config/sway"
       state: directory
       owner: "{{ ansible_env.USERNAME }}"
       group: "{{ ansible_env.USERNAME }}"
       mode: 0755
   - name: copy main config
-    template: src=../config/configuration/i3.tpl dest={{ ansible_env.HOME }}/.config/i3/config
+    template: src=../config/configuration/sway.tpl dest={{ ansible_env.HOME }}/.config/sway/config
