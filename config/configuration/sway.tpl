@@ -112,12 +112,11 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
-# reload the configuration file
+# Reload the configuration file
 bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# Exit sway (logs you out of your Wayland session)
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -169,12 +168,20 @@ exec --no-startup-id "redshift"
 # nm-applet
 exec --no-startup-id nm-applet --sm-disable
 
-# polybar
-exec_always --no-startup-id "$HOME/.config/i3/bin/run_polybar.sh"
-
 # resize firefox popup windows
 for_window [class="^[fF]irefox" title="^Save As$"] floating enable, resize set 1200 800, move position center
 for_window [class="^[fF]irefox" title="^Choose Download Folder:$"] floating enable, resize set 1200 800, move position center
 
 # start flameshot for a screenshot
 bindsym Print exec flameshot gui
+
+bar {
+    status_command i3status
+}
+
+# display setup
+# wlr-randr --output DP-9 --mode 3840x2160 --scale 1.4
+# 1544-1200
+output eDP-1 pos 2744 344 res 1920x1200
+output DP-9 pos 0 0 res 3840x2160@50
+output DP-8 pos 0 0 res 3840x2160@50
