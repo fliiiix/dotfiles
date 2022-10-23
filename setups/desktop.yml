@@ -11,7 +11,7 @@
 - import_playbook: ../functions/keep_kernel.yml
 
 # install icons and themes
-- import_playbook: ../functions/i3_meta.yml
+- import_playbook: ../functions/sway_meta.yml
 - import_playbook: ../functions/redshift.yml
 
 # install custom scripts
