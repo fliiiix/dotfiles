@@ -148,7 +148,7 @@ bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
 
 # lockscreen
-bindsym $mod+l exec "i3lock --tiling --ignore-empty-password --show-failed-attempts -i $HOME/.config/i3/bg.png"
+bindsym $mod+l exec "swaylock --tiling --ignore-empty-password --show-failed-attempts --image $HOME/.config/sway/bg.png"
 
 # mod+u all the good unicode characters
 bindsym $mod+u exec --no-startup-id rofi -lines 10 -dmenu -input ~/.symbols.txt | cut -d' ' -f1 -z | xclip -selection c
