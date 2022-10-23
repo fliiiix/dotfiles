@@ -166,7 +166,9 @@ exec_always --no-startup-id "setxkbmap -layout us,ch -option grp:shifts_toggle"
 exec --no-startup-id "redshift"
 
 # nm-applet
-exec --no-startup-id nm-applet --sm-disable
+# Seems to be a bit broken
+# https://github.com/swaywm/sway/issues/1357
+exec --no-startup-id nm-applet --indicator
 
 # resize firefox popup windows
 for_window [class="^[fF]irefox" title="^Save As$"] floating enable, resize set 1200 800, move position center
