@@ -25,7 +25,6 @@ exec /usr/bin/gnome/settings/daemon
 floating_modifier $mod
 
 # start a terminal
-#bindsym $mod+Return exec gnome-terminal --hide-menubar --profile=i3
 bindsym $mod+Return exec terminator
 
 # kill focused window
@@ -113,7 +112,7 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # Reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r reload
 
 # Exit sway (logs you out of your Wayland session)
 bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
