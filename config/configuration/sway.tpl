@@ -1,6 +1,8 @@
-# i3 config file (v4)
+# Default config for sway
 #
-# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+# Copy this to ~/.config/sway/config and edit it to your liking.
+#
+# Read `man 5 sway` for a complete reference.
 
 set $mod Mod4
 
@@ -8,18 +10,9 @@ set $mod Mod4
 # is used in the bar {} block below.
 font pango:monospace 10
 
-exec /usr/bin/gnome/settings/daemon
-
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
-
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -30,12 +23,11 @@ bindsym $mod+Return exec terminator
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# Your preferred application launcher
+# Note: pass the final command to swaymsg so that the resulting window can be opened
+# on the original workspace that the command was run on.
+set $menu dmenu_path | dmenu | xargs swaymsg exec --
+bindsym $mod+d exec $menu
 
 # change focus
 #bindsym $mod+j focus left

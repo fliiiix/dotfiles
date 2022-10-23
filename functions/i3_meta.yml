@@ -1,7 +1,0 @@
-- import_playbook: i3.yml
-- import_playbook: background.yml
-- import_playbook: terminator.yml
-- import_playbook: polybar.yml
-- import_playbook: unicode.yml
-- import_playbook: pass.yml
-- import_playbook: wifi.yml
