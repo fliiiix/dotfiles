@@ -33,3 +33,4 @@
 - import_playbook: ../functions/enable_rpmfusion.yml
 - import_playbook: ../functions/vlc.yml
 - import_playbook: ../functions/steam.yml
+- import_playbook: ../functions/github_tooling.yml

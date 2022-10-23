@@ -10,7 +10,8 @@
       ansible.builtin.yum_repository:
         name: github-tools
         description: Github tooling repo
-        baseurl: "https://cli.github.com/packages/rpm/gh-cli.repo"
+        baseurl: "https://cli.github.com/packages/rpm"
+        gpgkey: "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x23F3D4EA75716059"
     - name: Install github tooling
       ansible.builtin.dnf:
         name: "gh"
