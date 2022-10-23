@@ -7,6 +7,8 @@
     with_items:
       - sway
       - swaylock
+      - swaybg
+      - i3status
   - name: ensure file that the config directory has the right permisions
     become: yes
     file:
@@ -17,3 +19,5 @@
       mode: 0755
   - name: copy main config
     template: src=../config/configuration/sway.tpl dest={{ ansible_env.HOME }}/.config/sway/config
+  - name: copy background image to sway folder
+    copy: src=../config/bg.png dest={{ ansible_env.HOME }}/.config/sway/bg.png

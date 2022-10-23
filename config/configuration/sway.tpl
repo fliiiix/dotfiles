@@ -157,7 +157,7 @@ bindsym $mod+u exec --no-startup-id rofi -lines 10 -dmenu -input ~/.symbols.txt 
 bindsym $mod+p exec $HOME/.config/i3/bin/rofi_pass.sh
 
 # background
-exec_always --no-startup-id "feh --borderless --bg-fill $HOME/.config/i3/bg.png"
+exec_always --no-startup-id "swaybg --mode fill --image $HOME/.config/sway/bg.png"
 
 # keymap
 exec_always --no-startup-id "setxkbmap -layout us,ch -option grp:shifts_toggle"
@@ -182,6 +182,3 @@ bar {
 # display setup
 # wlr-randr --output DP-9 --mode 3840x2160 --scale 1.4
 # 1544-1200
-output eDP-1 pos 2744 344 res 1920x1200
-output DP-9 pos 0 0 res 3840x2160@50
-output DP-8 pos 0 0 res 3840x2160@50
