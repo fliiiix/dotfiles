@@ -6,9 +6,9 @@
   - name: ensure pass is installed at the latest version
     become: yes
     package: name=pass state=latest
-  - name: ensure the i3 bin directory exists
-    file: path={{ ansible_env.HOME }}/.config/i3/bin state=directory
+  - name: ensure the sway bin directory exists
+    file: path={{ ansible_env.HOME }}/.config/sway/bin state=directory
   - name: copy the rofi config script
-    template: src=../config/scripts/rofi_pass.tpl dest={{ ansible_env.HOME  }}/.config/i3/bin/rofi_pass.sh
+    template: src=../config/scripts/rofi_pass.tpl dest={{ ansible_env.HOME  }}/.config/sway/bin/rofi_pass.sh
   - name: ensure file that the script has the right permisions
-    file: path={{ ansible_env.HOME }}/.config/i3/bin/rofi_pass.sh owner={{ ansible_env.USERNAME }} group={{ ansible_env.USERNAME }} mode=0755
+    file: path={{ ansible_env.HOME }}/.config/sway/bin/rofi_pass.sh owner={{ ansible_env.USERNAME }} group={{ ansible_env.USERNAME }} mode=0755

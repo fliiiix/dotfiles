@@ -154,7 +154,7 @@ bindsym $mod+l exec "i3lock --tiling --ignore-empty-password --show-failed-attem
 # mod+u all the good unicode characters
 bindsym $mod+u exec --no-startup-id rofi -lines 10 -dmenu -input ~/.symbols.txt | cut -d' ' -f1 -z | xclip -selection c
 # mod+p for pass manager
-bindsym $mod+p exec $HOME/.config/i3/bin/rofi_pass.sh
+bindsym $mod+p exec $HOME/.config/sway/bin/rofi_pass.sh
 
 # background
 exec_always --no-startup-id "swaybg --mode fill --image $HOME/.config/sway/bg.png"
