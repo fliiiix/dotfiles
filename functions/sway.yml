@@ -9,6 +9,7 @@
       - swaylock
       - swaybg
       - i3status
+      - wl-clipboard
   - name: ensure file that the config directory has the right permisions
     become: yes
     file:
