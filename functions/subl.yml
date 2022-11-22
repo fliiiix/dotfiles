@@ -3,9 +3,9 @@
   tasks:
   - name: download sublime_text and check checksum
     get_url:
-      url: https://download.sublimetext.com/sublime_text_build_4126_x64.tar.xz
+      url: https://download.sublimetext.com/sublime_text_build_4143_x64.tar.xz
       dest: /tmp/sublime_text.tar.xz
-      checksum: md5:65822807462bd930b997743180636d6f
+      checksum: md5:6db568dbe131d87a26eb6c620183c033
   - name: create directory to unpack
     become: yes
     ansible.builtin.file:
