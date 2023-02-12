@@ -166,7 +166,7 @@ for_window [class="^[fF]irefox" title="^Save As$"] floating enable, resize set 1
 for_window [class="^[fF]irefox" title="^Choose Download Folder:$"] floating enable, resize set 1200 800, move position center
 
 # start flameshot for a screenshot
-bindsym Print exec flameshot gui
+bindsym Print exec "grimshot copy area"
 
 bar {
     status_command i3status

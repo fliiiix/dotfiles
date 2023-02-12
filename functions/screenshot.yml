@@ -7,6 +7,11 @@
     package: state=latest name={{ item }}
     with_items:
       - flameshot
+  - name: ensure grim shot is installed since flameshot does not work well on wayland
+    become: yes
+    package: state=latest name={{ item }}
+    with_items:
+      - grimshot
   - name: ensure that the screenshot dir exist
     file: path={{ ansible_env.HOME }}/Pictures/screenshots state=directory
   - name: copy the screenshot script
