@@ -3,7 +3,7 @@
   tasks:
   - name: download sublime_text and check checksum
     get_url:
-      url: http://download.sublimetext.com/sublime_text_build_4152_x64.tar.xz
+      url: https://download.sublimetext.com/sublime_text_build_4152_x64.tar.xz
       dest: /tmp/sublime_text.tar.xz
       checksum: md5:37667127bfba8355de03d27e58bec1b6
   - name: create directory to unpack
