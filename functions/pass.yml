@@ -12,3 +12,15 @@
     template: src=../config/scripts/rofi_pass.tpl dest={{ ansible_env.HOME  }}/.config/sway/bin/rofi_pass.sh
   - name: ensure file that the script has the right permisions
     file: path={{ ansible_env.HOME }}/.config/sway/bin/rofi_pass.sh owner={{ ansible_env.USERNAME }} group={{ ansible_env.USERNAME }} mode=0755
+  - name: ensure a pinentry tool is installed
+    become: yes
+    package: name=pinentry state=latest
+  - name: ensure the gpg config directory exists
+    file: path={{ ansible_env.HOME }}/.gnupg state=directory
+  - name: force gpg to use the qt version
+    copy:
+      dest: "{{ ansible_env.HOME }}/.gnupg/gpg-agent.conf"
+      content: |
+        pinentry-program /usr/bin/pinentry-qt
+  - name: reload gpg agent
+    ansible.builtin.command: gpg-connect-agent reloadagent /bye

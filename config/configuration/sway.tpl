@@ -161,6 +161,12 @@ exec --no-startup-id "redshift"
 # https://github.com/swaywm/sway/issues/1357
 exec --no-startup-id nm-applet --indicator
 
+# floating windows
+# possible matches:
+# https://man.archlinux.org/man/sway.5#CRITERIA
+# inspect with `swaymsg -t get_tree`
+for_window [app_id="^pinentry-*"] floating enable
+
 # resize firefox popup windows
 for_window [class="^[fF]irefox" title="^Save As$"] floating enable, resize set 1200 800, move position center
 for_window [class="^[fF]irefox" title="^Choose Download Folder:$"] floating enable, resize set 1200 800, move position center
