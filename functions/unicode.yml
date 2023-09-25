@@ -6,7 +6,7 @@
     package: state=latest name={{ item }}
     with_items:
             - rofi
-            - xclip
+            - wl-clipboard
   - name: copy main config
     template: src=../config/configuration/symbols.txt dest={{ ansible_env.HOME }}/.symbols.txt
 
