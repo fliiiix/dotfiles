@@ -151,7 +151,7 @@ bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
 bindsym $mod+l exec "swaylock --tiling --ignore-empty-password --show-failed-attempts --image $HOME/.config/sway/bg.png"
 
 # mod+u all the good unicode characters
-bindsym $mod+u exec --no-startup-id rofi -lines 10 -dmenu -input ~/.symbols.txt | cut -d' ' -f1 -z | wl-copy
+bindsym $mod+u exec --no-startup-id wl-copy $(rofi -lines 10 -dmenu -input ~/.symbols.txt | cut -d' ' -f1 -z)
 # mod+p for pass manager
 bindsym $mod+p exec $HOME/.config/sway/bin/rofi_pass.sh
 
