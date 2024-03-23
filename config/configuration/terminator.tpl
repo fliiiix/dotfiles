@@ -1,16 +1,15 @@
 [global_config]
-  title_hide_sizetext = True
   inactive_color_offset = 0.809989142237
 [keybindings]
 [profiles]
   [[default]]
-    background_color = "#002b36"
-    cursor_color = "#aaaaaa"
-    foreground_color = "#839496"
+    background_color = "#ffffff"
+    foreground_color = "#333333"
     show_titlebar = False
     scrollback_lines = 10000
-    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    palette = "#000000:#dc2626:#16a34a:#ca8a04:#2563eb:#db2777:#0891b2:#dddddd:#767676:#f87171:#4ade80:#facc15:#60a5fa:#f472b6:#22d3ee:#ffffff"
     login_shell = True
+    bold_is_bright = True
 [layouts]
   [[default]]
     [[[child1]]]
