@@ -7,7 +7,7 @@
       cmd: flatpak remote-modify --enable flathub
   - name: install signal
     ansible.builtin.shell:
-      cmd: flatpak install flathub org.signal.Signal
+      cmd: flatpak install --assumeyes flathub org.signal.Signal
   - name: create start script
     template: src=../config/scripts/signal.tpl dest=/usr/local/bin/signal
   - name: ensure file that the script has the right permisions
