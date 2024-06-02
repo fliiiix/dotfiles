@@ -1,0 +1,6 @@
+---
+- hosts: all
+  tasks:
+  - name: ensure wdisplays is installed at the latest version
+    become: yes
+    package: name=wdisplays state=latest
