@@ -1,0 +1,8 @@
+---
+- hosts: all
+  tasks:
+  - name: ensure tig is installed at the latest version
+    become: yes
+    package: name=tig state=latest
+  - name: copy the .tigrc config
+    template: src=../config/configuration/tigrc.tpl dest={{ ansible_env.HOME  }}/.tigrc
