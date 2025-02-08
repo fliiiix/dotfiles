@@ -1,0 +1,37 @@
+---
+- hosts: all
+  become: yes
+  vars:
+    destdir: /usr/local/src/darkice
+    darkice_version: 1.5
+    darkice_md5: ea7d5bc1546946f69d6a0f408a67a643
+  tasks:
+  - name: ensure that all dependencies are installed at the latest version
+    package: state=latest name={{ item }}
+    with_items:
+      - gcc
+      - gcc-c++
+      - lame-devel
+      - pulseaudio-libs-devel
+  - name: download darkice
+    get_url:
+      url: https://github.com/rafael2k/darkice/releases/download/v{{ darkice_version }}/darkice-{{ darkice_version }}.tar.gz
+      dest: /tmp/darkice-{{ darkice_version }}.tar.gz
+      checksum: md5:{{ darkice_md5 }}
+  - name: create directory to unpack
+    become: yes
+    ansible.builtin.file:
+      path: "{{ destdir }}"
+      state: directory
+  - name: unpack darkice
+    become: yes
+    unarchive:
+      src: /tmp/darkice-{{ darkice_version }}.tar.gz
+      dest: "{{ destdir }}"
+      extra_opts: ['--strip-components=1', '--show-stored-names']
+  - name: configure
+    command: ./configure chdir={{ destdir }}
+  - name: build
+    command: make -j4 chdir={{ destdir }}
+  - name: install
+    command: make install chdir={{ destdir }}

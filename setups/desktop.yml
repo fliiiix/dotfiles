@@ -30,6 +30,7 @@
 - import_playbook: ../functions/thunderbird.yml
 - import_playbook: ../functions/zsh.yml
 - import_playbook: ../functions/fuse_sshfs.yml
+- import_playbook: ../functions/darkice.yml
 
 # install additional packages
 - import_playbook: ../functions/enable_rpmfusion.yml
