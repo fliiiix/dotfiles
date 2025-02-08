@@ -12,6 +12,7 @@
 
 # install icons and themes
 - import_playbook: ../functions/sway_meta.yml
+- import_playbook: ../functions/wdisplays.yml
 - import_playbook: ../functions/redshift.yml
 
 # install custom scripts
