@@ -1,0 +1,6 @@
+---
+- hosts: all
+  tasks:
+  - name: ensure fuse-sshfs is installed at the latest version
+    become: yes
+    package: name=fuse-sshfsstate=latest
