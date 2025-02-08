@@ -16,13 +16,13 @@
 - import_playbook: ../functions/sway_meta.yml
 - import_playbook: ../functions/redshift.yml
 - import_playbook: ../functions/light.yml
+- import_playbook: ../functions/wdisplays.yml
 
 # install custom scripts
 - import_playbook: ../functions/screenshot.yml
 - import_playbook: ../functions/rawtojpg.yml
 
 # install core packages
-- import_playbook: ../functions/wdisplays.yml
 - import_playbook: ../functions/firefox.yml
 - import_playbook: ../functions/firewall.yml
 - import_playbook: ../functions/gigolo.yml
