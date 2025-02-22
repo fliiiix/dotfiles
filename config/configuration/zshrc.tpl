@@ -15,7 +15,7 @@ compinit -i
 
 # custom bundle install
 alias bundlsetup="bundle config set path 'vendor'"
-alias bundll="bundle install --binstubs --path vendor"
+alias bundll="bundlsetup && bundle install && bundle binstubs --standalone --all"
 
 # socks proxy
 alias proxy="ssh -D 1080 -N socks"
