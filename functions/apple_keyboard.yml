@@ -1,0 +1,13 @@
+# Source: https://wiki.archlinux.org/title/Apple_Keyboard
+---
+- hosts: all
+  tasks:
+  - name: ensure that the modprobe.d dir exists
+    file: path=/etc/modprobe.d state=directory
+  - name: configure the keyboard mode
+    become: yes
+    copy:
+      dest: "/etc/modprobe.d/hid_apple.conf"
+      content: |
+        options hid_apple fnmode=2
+
