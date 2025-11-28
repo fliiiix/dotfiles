@@ -4,10 +4,11 @@ export MAIL="hi@l33t.name"
 # Set LANG to en_US.UTF-8
 export LANG=en_US.UTF-8
 
-export ZSH=~/.zsh
+# ignore .vim folder when i want to open vim
+export CORRECT_IGNORE_FILE='.vim'
 
-# Load all of the config files in ~/oh-my-zsh that end in .zsh
-for config_file ($ZSH/lib/*.zsh) source $config_file
+# Load all of the config files that end in .zsh
+for config_file (~/.zsh/lib/*.zsh) source $config_file
 
 # Load and run compinit
 autoload -U compinit
