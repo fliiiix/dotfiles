@@ -4,7 +4,7 @@
   tasks:
   - name: enable flatpak hub
     ansible.builtin.shell:
-      cmd: flatpak remote-modify --enable flathub
+      cmd: flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
   - name: install signal
     ansible.builtin.shell:
       cmd: flatpak install --assumeyes flathub org.signal.Signal
