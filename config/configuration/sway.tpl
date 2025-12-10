@@ -107,6 +107,9 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
+# next does not seem to work yet on sway
+bindsym $mod+m move workspace to output left
+
 # Reload the configuration file
 bindsym $mod+Shift+r reload
 
