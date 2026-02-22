@@ -3,4 +3,4 @@
   tasks:
   - name: ensure fuse-sshfs is installed at the latest version
     become: yes
-    package: name=fuse-sshfsstate=latest
+    package: name=fuse-sshfs state=latest
