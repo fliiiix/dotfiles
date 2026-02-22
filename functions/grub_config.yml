@@ -6,4 +6,4 @@
     replace: dest=/etc/default/grub regexp='rhgb quiet' replace='' backup=yes
   - name: 
     become: yes
-    command: grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
+    command: grub2-mkconfig -o /boot/grub2/grub.cfg
