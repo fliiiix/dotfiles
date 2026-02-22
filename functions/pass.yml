@@ -14,7 +14,7 @@
     file: path={{ ansible_env.HOME }}/.config/sway/bin/rofi_pass.sh owner={{ ansible_env.USERNAME }} group={{ ansible_env.USERNAME }} mode=0755
   - name: ensure a pinentry tool is installed
     become: yes
-    package: name=pinentry state=latest
+    package: name=pinentry-qt state=latest
   - name: ensure the gpg config directory exists
     file: path={{ ansible_env.HOME }}/.gnupg state=directory
   - name: force gpg to use the qt version
