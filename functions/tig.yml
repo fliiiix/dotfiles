@@ -5,4 +5,4 @@
     become: yes
     package: name=tig state=latest
   - name: copy the .tigrc config
-    template: src=../config/configuration/tigrc.tpl dest={{ ansible_env.HOME  }}/.tigrc
+    template: src=../config/configuration/tigrc.tpl dest={{ ansible_facts.env.HOME  }}/.tigrc

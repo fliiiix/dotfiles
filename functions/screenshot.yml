@@ -13,7 +13,7 @@
     with_items:
       - grimshot
   - name: ensure that the screenshot dir exist
-    file: path={{ ansible_env.HOME }}/Pictures/screenshots state=directory
+    file: path={{ ansible_facts.env.HOME }}/Pictures/screenshots state=directory
   - name: copy the screenshot script
     become: yes
     template: src=../config/scripts/screenshot.tpl dest=/usr/local/bin/screenshot

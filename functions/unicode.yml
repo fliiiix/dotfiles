@@ -8,5 +8,5 @@
             - rofi
             - wl-clipboard
   - name: copy main config
-    template: src=../config/configuration/symbols.txt dest={{ ansible_env.HOME }}/.symbols.txt
+    template: src=../config/configuration/symbols.txt dest={{ ansible_facts.env.HOME }}/.symbols.txt
 

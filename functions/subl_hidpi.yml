@@ -6,5 +6,5 @@
           is_high_dpi: True
         template:
             src: ../config/configuration/Preferences.sublime-settings.tpl
-            dest: "{{ ansible_env.HOME }}/.config/sublime-text-3/Packages/User/Preferences.sublime-settings"
+            dest: "{{ ansible_facts.env.HOME }}/.config/sublime-text-3/Packages/User/Preferences.sublime-settings"
 

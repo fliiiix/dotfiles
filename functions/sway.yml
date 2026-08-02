@@ -13,12 +13,12 @@
   - name: ensure file that the config directory has the right permisions
     become: yes
     file:
-      path: "{{ ansible_env.HOME }}/.config/sway"
+      path: "{{ ansible_facts.env.HOME }}/.config/sway"
       state: directory
-      owner: "{{ ansible_env.USERNAME }}"
-      group: "{{ ansible_env.USERNAME }}"
+      owner: "{{ ansible_facts.env.USERNAME }}"
+      group: "{{ ansible_facts.env.USERNAME }}"
       mode: 0755
   - name: copy main config
-    template: src=../config/configuration/sway.tpl dest={{ ansible_env.HOME }}/.config/sway/config
+    template: src=../config/configuration/sway.tpl dest={{ ansible_facts.env.HOME }}/.config/sway/config
   - name: copy background image to sway folder
-    copy: src=../config/bg.png dest={{ ansible_env.HOME }}/.config/sway/bg.png
+    copy: src=../config/bg.png dest={{ ansible_facts.env.HOME }}/.config/sway/bg.png
