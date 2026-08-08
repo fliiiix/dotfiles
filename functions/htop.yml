@@ -1,0 +1,6 @@
+---
+- hosts: all
+  tasks:
+  - name: ensure mtpaint is installed at the latest version
+    become: yes
+    package: name=htop state=latest

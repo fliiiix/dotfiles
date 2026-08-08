@@ -3,6 +3,7 @@
 # setup mimimal tools to use linux
 - import_playbook: ../functions/pkg_update.yml
 - import_playbook: ../functions/vim.yml
+- import_playbook: ../functions/htop.yml
 - import_playbook: ../functions/git.yml
 - import_playbook: ../functions/tig.yml
 - import_playbook: ../functions/audio.yml
