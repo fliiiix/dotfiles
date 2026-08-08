@@ -12,7 +12,6 @@
 - import_playbook: ../functions/keep_kernel.yml
 
 # install icons and themes
-#- import_playbook: ../functions/hidpi_display_settings.yml
 - import_playbook: ../functions/sway_meta.yml
 - import_playbook: ../functions/redshift.yml
 - import_playbook: ../functions/light.yml
@@ -29,7 +28,6 @@
 - import_playbook: ../functions/mtpaint.yml
 - import_playbook: ../functions/signal.yml
 - import_playbook: ../functions/subl.yml
-#- import_playbook: ../functions/subl_hidpi.yml
 - import_playbook: ../functions/zsh.yml
 - import_playbook: ../functions/fuse_sshfs.yml
 
