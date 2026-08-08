@@ -25,7 +25,7 @@ exec /usr/bin/gnome/settings/daemon
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill

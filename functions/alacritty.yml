@@ -5,14 +5,14 @@
     become: yes
     package: state=latest name={{ item }}
     with_items:
-      - terminator
+      - alacritty
   - name: ensure file that the config directory has the right permisions
     become: yes
     file:
-      path: "{{ ansible_facts.env.HOME }}/.config/terminator"
+      path: "{{ ansible_facts.env.HOME }}/.config/alacritty"
       state: directory
       owner: "{{ ansible_facts.env.USERNAME }}"
       group: "{{ ansible_facts.env.USERNAME }}"
       mode: 0755
   - name: copy main config
-    template: src=../config/configuration/terminator.tpl dest={{ ansible_facts.env.HOME }}/.config/terminator/config
+    template: src=../config/configuration/alacritty.tpl dest={{ ansible_facts.env.HOME }}/.config/alacritty/alacritty.toml
