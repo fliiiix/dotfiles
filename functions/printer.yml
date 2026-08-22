@@ -1,0 +1,15 @@
+---
+- hosts: all
+  tasks:
+  - name: ensure cups is installed at the latest version
+    become: yes
+    package: name=cups state=latest
+  # source: https://www.canon-europe.com/support/consumer/products/printers/pixma/tr-series/pixma-tr8550.html?type=drivers&language=EN&os=Linux%20(64-bit)
+  - name: Install Canon IJ printer driver RPM package
+    ansible.builtin.dnf:
+      name: "../pkgs/cnijfilter2-5.50-1.x86_64.rpm"
+      state: present
+      disable_gpg_check: true
+  # TODO: use config/configuration/canontr8500.ppd
+  # to add the printer or do it manually
+  # http://localhost:631
